@@ -1,0 +1,7 @@
+main{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+}
