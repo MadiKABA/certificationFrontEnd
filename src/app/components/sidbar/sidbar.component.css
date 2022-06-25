@@ -1,7 +1,7 @@
 .sidbar-style{
     position: absolute;
     left: 0rem;
-    width: 18rem;
+    width: 17rem;
     height: calc(100vh - 5rem);
     background: #2C5C89;
     color: #fff;
@@ -15,7 +15,7 @@
     list-style: none;
     padding: 0%;
     margin-bottom: 0%;
-    height: calc(100vh - 4rem);
+    /* height: calc(100vh - 4rem); */
 }
 .nav-list-item{
     display: flex;

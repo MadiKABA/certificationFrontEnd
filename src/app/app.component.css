@@ -2,13 +2,6 @@ main{
     position: absolute;
     width: 100%;
     top: 5rem;
+    height:calc(100vh - 5rem);
     z-index: 1;
-}
-.app-sidbar{
-    position: absolute;
-    left: 0rem;
-    width: 250px;
-    border:1px solid black;
-    background: red;
-    color: red;
 }

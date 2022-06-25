@@ -14,7 +14,7 @@
     color: #ffffff;
     font-size: 3rem;
     display: flex;
-    margin-left: 15rem;
+    margin-left: 13.5rem;
 }
 .section-profile-user{
     color: #ffffff;
@@ -26,4 +26,16 @@
     color: #326799;
     font-size: 1.5rem;
     text-align: center;
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    margin-left: 3rem;
+}
+.log-and-togle-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
