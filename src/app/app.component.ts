@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'certificationFrontEnd';
+
+  sidebarOpen=true
+  navbartoler(){
+    this.sidebarOpen=!this.sidebarOpen
+  }
+
 }
