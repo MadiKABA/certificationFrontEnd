@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidbar',
@@ -6,7 +6,7 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./sidbar.component.css']
 })
 export class SidbarComponent implements OnInit {
-  @Output() sidebarOpen:any=false
+  @Input() sideNavStatus:boolean=false
 
   constructor() { }
 

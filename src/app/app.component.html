@@ -1,15 +1,10 @@
   <div class="container-fluid g-0">
   <!-- Bar de navigation -->
-  <app-navbar></app-navbar>
+  <app-navbar (sideNavToggled)="sideNavStatus=$event;"></app-navbar>
   <!-- Fin de bar de navigation-->
   <!-- Sidebar -->
   <main>
-      <app-sidbar></app-sidbar>
-      <div class="content-gestion-module p-3">
-        <router-outlet>
-          
-        </router-outlet>
-      </div>
+      <app-sidbar [sideNavStatus]="sideNavStatus"></app-sidbar>
   </main>
   <!-- Fin de sidebar -->
 </div>
