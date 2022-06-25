@@ -26,8 +26,14 @@
         </li>
     </ul>
 </div>
+
 <div class="display-area p-3" [ngClass]="{'display-aray-reduit':sideNavStatus}">
+
+    <!-- Affichage des gestion des toutes les modules -->
     <router-outlet>
       
     </router-outlet>
+    
+    <!-- Affichage du footer  -->
+    <app-footer></app-footer>
 </div>
