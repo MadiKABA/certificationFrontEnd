@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -15,7 +15,8 @@ export class EditProfileComponent implements OnInit {
   constructor(
               private profileService:ProfileService, 
               private fb:FormBuilder,
-              private router:ActivatedRoute
+              private router:ActivatedRoute,
+              private redirectRoute:Router
             ) { }
 
   ngOnInit(): void {
@@ -46,7 +47,8 @@ export class EditProfileComponent implements OnInit {
     if(this.editProfile.invalid) return
     this.profileService.updateProfile(this.id,this.editProfile.value).subscribe({
       next:(data)=>{
-        console.log(data);
+        alert("Modification effectuer avec success");
+        this.redirction();
       },
       error:(error)=>{
         console.log(error);
@@ -57,6 +59,9 @@ export class EditProfileComponent implements OnInit {
   /*Controle les champs de saisie*/
   get controleSaisie(){
     return this.editProfile.controls;
+  }
+  redirction(){
+    this.redirectRoute.navigate(['/liste-profiles']);
   }
 
 }

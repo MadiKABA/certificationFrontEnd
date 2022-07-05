@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DepartementService } from 'src/app/services/departement.service';
 
 @Component({
@@ -16,7 +16,8 @@ export class EditDepartementComponent implements OnInit {
   constructor(
               private departementService:DepartementService, 
               private fb:FormBuilder,
-              private router:ActivatedRoute
+              private router:ActivatedRoute,
+              private redirectRoute:Router
             ) { }
 
   ngOnInit(): void {
@@ -47,7 +48,8 @@ export class EditDepartementComponent implements OnInit {
     if(this.editDepartement.invalid) return
     this.departementService.updateProfile(this.id,this.editDepartement.value).subscribe({
       next:(data)=>{
-        console.log(data);
+        alert("Modification effectuer avec success");
+        this.redirction()
       },
       error:(error)=>{
         console.log(error);
@@ -60,6 +62,8 @@ export class EditDepartementComponent implements OnInit {
     return this.editDepartement.controls;
   }
 
-
+  redirction(){
+    this.redirectRoute.navigate(['/liste-profiles']);
+  }
   
 }
