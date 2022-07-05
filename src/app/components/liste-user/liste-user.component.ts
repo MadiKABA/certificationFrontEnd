@@ -31,4 +31,19 @@ export class ListeUserComponent implements OnInit {
     })
   }
 
+
+  /*La methode pour supprimer un admin */
+  public delete(id:number){
+    this.serviceAdmin.deleteAdminstrateur(id)
+      .subscribe({
+        next:(data)=>{
+          console.log(data);
+          this.getAll();
+        },
+        error:(error)=>{
+          this.messageError=error
+        }
+      })
+  }
+
 }

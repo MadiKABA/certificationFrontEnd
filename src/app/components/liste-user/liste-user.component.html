@@ -47,7 +47,9 @@
               <td>{{administrateur.username}}</td>
               <td class="style-icone"><i class="bi bi-pencil-square"></i></td>
               <td class="style-icone"><i class="bi bi-trash3-fill icone-edit"></i></td>
-              <td class="style-icone"><i class="bi bi-trash3-fill icone-delete"></i></td>
+              <td class="style-icone" (click)="delete(administrateur.id)">
+                <i class="bi bi-trash3-fill icone-delete"></i>
+              </td>
             </tr>
           </tbody>
       </table>

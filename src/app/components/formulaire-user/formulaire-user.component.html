@@ -1,59 +1,62 @@
 <div class="formulaire-container">
     <h1 class="text-center text-syle">Creer un compte</h1>
+    {{this.saveAdministrateur.value | json}}
     <div class="fom-container">
-        <form>
+        <form [formGroup]="saveAdministrateur" (ngSubmit)="save()">
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Nom</label>
-                    <input type="text" class="champ-input" id="nom">
+                    <input type="text" formControlName="nom" class="champ-input" id="nom">
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Prenom</label>
-                    <input type="text" class="champ-input" id="prenom">
+                    <input type="text" formControlName="prenoms" class="champ-input" id="prenom">
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Date de naissance</label>
-                    <input type="date" class="champ-input" id="nom">
+                    <input type="date" formArrayName="dateNaissance" class="champ-input" id="nom">
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Adresse email</label>
-                    <input type="text" class="champ-input" id="prenom">
+                    <input type="text" formControlName="email" class="champ-input" id="prenom">
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Telephone</label>
-                    <input type="text" class="champ-input" id="nom">
+                    <input type="text" formControlName="telephone" class="champ-input" id="nom">
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Poste occupe</label>
-                    <input type="text" class="champ-input" id="prenom">
+                    <input type="text" formControlName="posteOccupe" class="champ-input" id="prenom">
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Selectionner un profile</label>
-                    <select class="champ-input">
-                        <option></option>
+                    <label class="titre-inpute" for="nom">Profile</label>
+                    <select class="champ-input" formControlName="profileDTO">
+                        <option>Selection le profile</option>
+                        <option *ngFor="let profile of profiles" [ngValue]="profile">{{profile.libelle}}</option>
                     </select>
                 </div>
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Selectionner un departement</label>
-                    <select class="champ-input">
-                        <option></option>
+                    <label class="titre-inpute" for="nom">Departement</label>
+                    <select class="champ-input" formControlName="departementDTO">
+                        <option>Selection le departement</option>
+                        <option *ngFor="let departement of departements" [ngValue]="departement">{{departement.nomDepartement}}</option>
                     </select>
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Nom d'utilisateur</label>
-                    <input type="text" class="champ-input" id="nom">
+                    <input type="text" formControlName="username" class="champ-input" id="nom">
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Mot de passe</label>
-                    <input type="text" class="champ-input" id="prenom">
+                    <input type="text" formControlName="password" class="champ-input" id="prenom">
                 </div>
             </div>
             <div class="style-btn-envoyer my-2">
