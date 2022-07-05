@@ -1,0 +1,25 @@
+<div class="formulaire-container">
+    <h1 class="text-center text-syle">Creer un compte</h1>
+    <div class="fom-container">
+        <div *ngIf="errorMessage">
+            <p class="text-center text-danger">{{errorMessage}}</p>
+        </div>
+        <form [formGroup]="addProfile" (ngSubmit)="save()">
+            <div class="div-champ-input">
+                <div class="test">
+                    <label class="titre-inpute" for="nom">Le libelle du profile</label>
+                    <input type="text" formControlName="libelle" class="champ-input" id="nom" required maxlength="30">
+                    <div *ngIf="controleSaisie['libelle'].touched && controleSaisie['libelle'].invalid">
+                        <p *ngIf="controleSaisie['libelle'].errors" class="text-danger">
+                            le champs est obligatoire
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="style-btn-envoyer my-2">
+                <button [disabled]="addProfile.invalid" class="save-btn">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+
+</div>

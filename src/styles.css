@@ -8,3 +8,42 @@
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
 }
+.style-icone{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.style-text-titre-tableau{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+}
+.icone-delete{
+    color: #ce0033;
+}
+.icone-edit{
+    color:#326799;
+}
+/* .icone-valide{
+
+} */
+.style-btn-envoyer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+.save-btn{
+    width: 30%;
+    height: 50px;
+    background: #326799;
+    border-radius: 10px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}

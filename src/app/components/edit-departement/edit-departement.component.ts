@@ -1,0 +1,65 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { DepartementService } from 'src/app/services/departement.service';
+
+@Component({
+  selector: 'app-edit-departement',
+  templateUrl: './edit-departement.component.html',
+  styleUrls: ['./edit-departement.component.css']
+})
+export class EditDepartementComponent implements OnInit {
+
+  id!:number;
+  errorMessage!:string;
+
+  constructor(
+              private departementService:DepartementService, 
+              private fb:FormBuilder,
+              private router:ActivatedRoute
+            ) { }
+
+  ngOnInit(): void {
+    this.id=this.router.snapshot.params['id'];
+    this.departementService.getOneDepartement(this.id).subscribe({
+      next:(data)=>{        
+        this.editDepartement=this.fb.group({
+          nomDepartement:(data['nomDepartement'])
+        })
+      },
+      error:(error)=>{
+        this.errorMessage=error
+      }
+    })
+  }
+  
+  editDepartement=this.fb.group({
+    nomDepartement:['',Validators.required]
+  })
+
+  /*Recuperation d'un profile a modifier*/
+  // public getOne(){
+
+  // }
+
+
+  save(){
+    if(this.editDepartement.invalid) return
+    this.departementService.updateProfile(this.id,this.editDepartement.value).subscribe({
+      next:(data)=>{
+        console.log(data);
+      },
+      error:(error)=>{
+        console.log(error);
+      }
+    })
+  }
+
+  /*Controle les champs de saisie*/
+  get controleSaisie(){
+    return this.editDepartement.controls;
+  }
+
+
+  
+}

@@ -1,0 +1,40 @@
+<h1>Liste des departements</h1>
+<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+<div class="formulaire-container" *ngIf="departements">
+    <div class="button-add-input-search my-4 mx-3">
+        <button class="button-add-user">
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajout-departementk"></i>
+            <span class="titre-btn-add-user" routerLink="/ajout-departement">Ajouter un departement</span>
+        </button>
+        <div>
+            <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
+            <button class="btn-search-admin">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="div-table-data">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Libelle du profile</th>
+              <th scope="col" colspan="3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let departement of departements">
+              <th scope="row">{{departement.id}}</th>
+              <td>{{departement.nomDepartement}}</td>
+              <td class="style-icone" routerLink="/modifife-departement/{{departement.id}}">
+                <i class="bi bi-pencil-square"></i>
+             </td>
+              <td class="style-icone" (click)="delete(departement.id)">
+                <i class="bi bi-trash3-fill icone-delete"></i>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<h1>La liste des Administrateurs</h1>
+<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+<div class="formulaire-container" *ngIf="administrateurs">
+    <div class="button-add-input-search my-4 mx-3">
+        <button class="button-add-user">
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/addUser"></i>
+            <span class="titre-btn-add-user" routerLink="/addUser">Ajouter un utilisateur</span>
+        </button>
+        <div>
+            <input type="search" class="input-search-admin" placeholder="Rechercher un utilisateur">
+            <button class="btn-search-admin">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="div-table-data">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Prenoms</th>
+              <th scope="col">Email</th>
+              <!-- <th scope="col">Date de naissance</th> -->
+              <th scope="col">Telephone</th>
+              <th scope="col">Poste occupe</th>
+              <th scope="col">Departement</th>
+              <th scope="col">Profile</th>
+              <th scope="col">Etat compte</th>
+              <th scope="col">Username</th>
+              <th scope="col" colspan="3" class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let administrateur of administrateurs">
+              <th scope="row">{{administrateur.id}}</th>
+              <td>{{administrateur.nom}}</td>
+              <td>{{administrateur.prenoms}}</td>
+              <td>{{administrateur.email}}</td>
+              <!-- <td>{{administrateur.dateNaissance}}</td> -->
+              <td>{{administrateur.telephone}}</td>
+              <td>{{administrateur.posteOccupe}}</td>
+              <td>{{administrateur.departementDTO.nomDepartement}}</td>
+              <td>{{administrateur.profileDTO.libelle}}</td>
+              <td>{{administrateur.etatCompte}}</td>
+              <td>{{administrateur.username}}</td>
+              <td class="style-icone"><i class="bi bi-pencil-square"></i></td>
+              <td class="style-icone"><i class="bi bi-trash3-fill icone-edit"></i></td>
+              <td class="style-icone"><i class="bi bi-trash3-fill icone-delete"></i></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+
+</div>

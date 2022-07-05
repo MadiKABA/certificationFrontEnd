@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  hostAdmin:"http://localhost:8080/administrateurs",
+  hostProfile:"http://localhost:8080/profiles",
+  hostDepartement:"http://localhost:8080/departements"
 };
 
 /*

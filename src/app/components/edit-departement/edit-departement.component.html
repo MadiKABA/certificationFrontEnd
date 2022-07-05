@@ -1,0 +1,25 @@
+<div class="formulaire-container">
+    <h1 class="text-center text-syle">Modifier un departement</h1>
+    <div class="fom-container">
+        <div *ngIf="errorMessage">
+            <p class="text-center text-danger">{{errorMessage}}</p>
+        </div>
+        <form [formGroup]="editDepartement" (ngSubmit)="save()">
+            <div class="div-champ-input">
+                <div class="test">
+                    <label class="titre-inpute" for="nom">Le nom de departement du profile</label>
+                    <input type="text" formControlName="nomDepartement" class="champ-input" id="nom" required maxlength="30">
+                    <div *ngIf="controleSaisie['nomDepartement'].touched && controleSaisie['nomDepartement'].invalid">
+                        <p *ngIf="controleSaisie['nomDepartement'].errors"class="text-danger">
+                            le champs est obligatoire et doit contenir au moins 10 lettres
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="style-btn-envoyer my-2">
+                <button [disabled]="editDepartement.invalid" class="save-btn">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+
+</div>

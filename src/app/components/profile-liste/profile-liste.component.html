@@ -1,0 +1,40 @@
+<h1>Liste des profiles</h1>
+<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+<div class="formulaire-container" *ngIf="profiles">
+    <div class="button-add-input-search my-4 mx-3">
+        <button class="button-add-user">
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajoute-profilek"></i>
+            <span class="titre-btn-add-user" routerLink="/ajoute-profile">Ajouter un profile</span>
+        </button>
+        <div>
+            <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
+            <button class="btn-search-admin">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <div class="div-table-data">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Libelle du profile</th>
+              <th scope="col" colspan="3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let profile of profiles">
+              <th scope="row">{{profile.id}}</th>
+              <td>{{profile.libelle}}</td>
+              <td class="style-icone" routerLink="/modifife-profile/{{profile.id}}">
+                <i class="bi bi-pencil-square"></i>
+             </td>
+              <td class="style-icone" (click)="delete(profile.id)">
+                <i class="bi bi-trash3-fill icone-delete"></i>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+</div>
