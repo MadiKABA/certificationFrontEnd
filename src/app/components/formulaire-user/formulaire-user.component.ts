@@ -1,4 +1,4 @@
-import { formatDate } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
@@ -12,7 +12,8 @@ import { ProfileService } from 'src/app/services/profile.service';
 @Component({
   selector: 'app-formulaire-user',
   templateUrl: './formulaire-user.component.html',
-  styleUrls: ['./formulaire-user.component.css']
+  styleUrls: ['./formulaire-user.component.css'],
+  providers: [DatePipe]
 })
 export class FormulaireUserComponent implements OnInit {
   errorMessage!:string
@@ -24,7 +25,8 @@ export class FormulaireUserComponent implements OnInit {
               private serviceAdmin:AdminService,
               private departementService:DepartementService,
               private profileService:ProfileService,
-              private fb:FormBuilder
+              private fb:FormBuilder,
+              private datePipe:DatePipe
             ) { }
 
   ngOnInit(): void {
@@ -52,22 +54,21 @@ export class FormulaireUserComponent implements OnInit {
       }
     })
   }
-  dateFormate = {
-    dateNaissance:new Date(Date.now())
-  }
+  dateNaissance = new Date()
+  newDate=this.datePipe.transform(this.dateNaissance,('dd/MM/yyyy'))
   // etatCompte!:EtatCompte
   saveAdministrateur=this.fb.group({
     nom:[''],
     prenoms:[''],
-    dateNaissance:[formatDate(this.dateFormate.dateNaissance, 'yyyy-MM-dd', 'en')],
+    dateNaissance:[this.newDate],
     email:[''],
     etatCompte:[EtatCompte.Man],
     telephone:[''],
     posteOccupe:[''],
     profileDTO:[''],
     departementDTO:[''],
-    username:[],
-    password:[],
+    username:[''],
+    password:[''],
     
   })
 
