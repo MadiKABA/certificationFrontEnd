@@ -1,7 +1,9 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
 import { Departement } from 'src/app/models/departement.model';
+import { EtatCompte } from 'src/app/models/etat.model';
 import { Profile } from 'src/app/models/profile.model';
 import { AdminService } from 'src/app/services/admin.service';
 import { DepartementService } from 'src/app/services/departement.service';
@@ -13,7 +15,7 @@ import { ProfileService } from 'src/app/services/profile.service';
   styleUrls: ['./formulaire-user.component.css']
 })
 export class FormulaireUserComponent implements OnInit {
-  messageError!:string
+  errorMessage!:string
   administrateurs!:Administrateur[];
   profiles!:Profile[];
   departements!:Departement[];
@@ -33,12 +35,9 @@ export class FormulaireUserComponent implements OnInit {
     this.departementService.getAllDepartement().subscribe({
       next:(data)=>{
         this.departements=data
-        console.log(data);
-        
       },
       error:(error)=>{
         console.log(error);
-        
       }
     })
   }
@@ -49,15 +48,20 @@ export class FormulaireUserComponent implements OnInit {
         this.profiles=data;
       },
       error:(error)=>{
-        this.messageError=error;
+        this.errorMessage=error;
       }
     })
   }
+  dateFormate = {
+    dateNaissance:new Date(Date.now())
+  }
+  // etatCompte!:EtatCompte
   saveAdministrateur=this.fb.group({
     nom:[''],
     prenoms:[''],
-    dateNaissance:[null],
+    dateNaissance:[formatDate(this.dateFormate.dateNaissance, 'yyyy-MM-dd', 'en')],
     email:[''],
+    etatCompte:[EtatCompte.Man],
     telephone:[''],
     posteOccupe:[''],
     profileDTO:[''],
@@ -74,6 +78,7 @@ export class FormulaireUserComponent implements OnInit {
         
       },
       error:(error)=>{
+        this.errorMessage=error;
         console.log(error);
         
       }

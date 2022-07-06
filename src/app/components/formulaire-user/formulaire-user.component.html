@@ -1,8 +1,12 @@
 <div class="formulaire-container">
     <h1 class="text-center text-syle">Creer un compte</h1>
-    {{this.saveAdministrateur.value | json}}
+    <!-- {{this.saveAdministrateur.value | json}} -->
+    <div *ngIf="errorMessage">
+        <p class="text-center text-danger">{{errorMessage}}</p>
+    </div>
     <div class="fom-container">
         <form [formGroup]="saveAdministrateur" (ngSubmit)="save()">
+            <!-- <input type="text" formControlName="etat" class="champ-input" id="nom"> -->
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Nom</label>
