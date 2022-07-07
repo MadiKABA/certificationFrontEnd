@@ -63,7 +63,7 @@ export class EditDepartementComponent implements OnInit {
   }
 
   redirction(){
-    this.redirectRoute.navigate(['/liste-profiles']);
+    this.redirectRoute.navigate(['/liste-departement']);
   }
 
 }

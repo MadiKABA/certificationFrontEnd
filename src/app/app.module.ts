@@ -34,8 +34,8 @@ import { EditDepartementComponent } from './components/departement/edit-departem
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
