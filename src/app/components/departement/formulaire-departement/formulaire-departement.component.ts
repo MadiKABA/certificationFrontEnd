@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { DepartementService } from 'src/app/services/departement.service';
+import { DepartementService } from 'src/app/services/departementService/departement.service';
 
 @Component({
   selector: 'app-formulaire-departement',
@@ -27,11 +27,11 @@ export class FormulaireDepartementComponent implements OnInit {
       {
         next:(data)=>{
           this.addDepartement.reset({})
-          
+
         },
         error:(error)=>{
           this.errorMessage=error;
-          
+
         }
       }
     )

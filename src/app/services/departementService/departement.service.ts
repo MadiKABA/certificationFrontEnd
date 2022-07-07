@@ -1,39 +1,41 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, pipe, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Profile } from '../models/profile.model';
+import { Departement } from '../../models/departement.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
-  private host=environment.hostProfile;
+export class DepartementService {
+  host=environment.hostDepartement;
 
   constructor(private http:HttpClient) { }
-  /*Recuperer tous les profiles*/
-  public getAllProfiles():Observable<Profile[]>{
-    return this.http.get<Profile[]>(this.host)
-    .pipe(
-      catchError(this.handleError)
-    )
+  //Recuperation des tous lse departements
+  public getAllDepartement():Observable<Departement[]>{
+    return this.http.get<Departement[]>(this.host)
+      .pipe(
+        catchError(this.handleError)
+      )
+
   }
+
   /*Savugarder une categorie*/
-  public saveProfile(profile:Profile[]):Observable<Profile>{
-    return this.http.post<Profile>(this.host,profile)
+  public saveDepartement(departement:Departement[]):Observable<Departement>{
+    return this.http.post<Departement>(this.host,departement)
       .pipe(
         catchError(this.handleError)
       )
   }
   /*Supprimer une categorie*/
-  public deleteCategorie(id:number){
+  public deleteDepartement(id:number){
     return this.http.delete(this.host+"/"+id)
     .pipe(
       catchError(this.handleError)
     )
   }
   /*Recuperer un profile*/
-  public getOneProfile(id:number):Observable<any>{
+  public getOneDepartement(id:number):Observable<any>{
     return this.http.get(this.host+"/"+id)
     .pipe(
       catchError(this.handleError)
@@ -41,9 +43,9 @@ export class ProfileService {
   }
 
   /*Modification de profile*/
-  public updateProfile(id:number,profile:Profile[]):Observable<any>{
-    return this.http.put(this.host+"/"+id,profile)
-      pipe(
+  public updateProfile(id:number,departement:Departement[]):Observable<any>{
+    return this.http.put(this.host+"/"+id,departement)
+      .pipe(
         catchError(this.handleError)
       )
   }
@@ -60,7 +62,8 @@ export class ProfileService {
       messageError=error.error.message
     }
     // Return return l'eurr sur l'interface utilisateur.
-    
+
     return throwError(() => new Error(messageError));
   }
+
 }

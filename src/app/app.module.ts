@@ -6,16 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidbarComponent } from './components/sidbar/sidbar.component';
-import { FormulaireUserComponent } from './components/formulaire-user/formulaire-user.component';
+import { FormulaireUserComponent } from './components/administrateur/formulaire-user/formulaire-user.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ListeUserComponent } from './components/liste-user/liste-user.component';
-import { ProfileListeComponent } from './components/profile-liste/profile-liste.component';
-import { FormulaireProfileComponent } from './components/formulaire-profile/formulaire-profile.component';
+import { ListeUserComponent } from './components/administrateur/liste-user/liste-user.component';
+import { ProfileListeComponent } from './components/profile/profile-liste/profile-liste.component';
+import { FormulaireProfileComponent } from './components/profile/formulaire-profile/formulaire-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { ListeDepartementComponent } from './components/liste-departement/liste-departement.component';
-import { FormulaireDepartementComponent } from './components/formulaire-departement/formulaire-departement.component';
-import { EditDepartementComponent } from './components/edit-departement/edit-departement.component';
+import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
+import { ListeDepartementComponent } from './components/departement/liste-departement/liste-departement.component';
+import { FormulaireDepartementComponent } from './components/departement/formulaire-departement/formulaire-departement.component';
+import { EditDepartementComponent } from './components/departement/edit-departement/edit-departement.component';
 
 @NgModule({
   declarations: [

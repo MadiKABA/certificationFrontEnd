@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ProfileService } from 'src/app/services/profile.service';
+import { ProfileService } from 'src/app/services/profileService/profile.service';
 
 @Component({
   selector: 'app-formulaire-profile',
@@ -25,11 +25,11 @@ export class FormulaireProfileComponent implements OnInit {
       {
         next:(data)=>{
           this.addProfile.reset({})
-          
+
         },
         error:(error)=>{
           this.errorMessage=error;
-          
+
         }
       }
     )

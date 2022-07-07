@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Departement } from 'src/app/models/departement.model';
-import { DepartementService } from 'src/app/services/departement.service';
+import { DepartementService } from 'src/app/services/departementService/departement.service';
 
 @Component({
   selector: 'app-liste-departement',
@@ -21,11 +21,11 @@ export class ListeDepartementComponent implements OnInit {
       next:(data)=>{
         this.departements=data
         console.log(data);
-        
+
       },
       error:(error)=>{
         console.log(error);
-        
+
       }
     })
   }
@@ -36,7 +36,7 @@ export class ListeDepartementComponent implements OnInit {
       next:(data)=>{
         // console.log(id);
         this.getAll();
-        
+
       },
       error:(error)=>{
         this.messageError=error

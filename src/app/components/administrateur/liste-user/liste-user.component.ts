@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/services/admin.service';
+import { AdminService } from 'src/app/services/administrateurService/admin.service';
 
 @Component({
   selector: 'app-liste-user',
@@ -21,7 +21,7 @@ export class ListeUserComponent implements OnInit {
     this.serviceAdmin.getAllAdmin().subscribe({
       next:(data)=>{
         console.log(data);
-        
+
         this.administrateurs=data
       },
       error:(error)=>{

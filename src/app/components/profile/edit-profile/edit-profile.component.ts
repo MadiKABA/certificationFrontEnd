@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DepartementService } from 'src/app/services/departement.service';
+import { ProfileService } from 'src/app/services/profileService/profile.service';
 
 @Component({
-  selector: 'app-edit-departement',
-  templateUrl: './edit-departement.component.html',
-  styleUrls: ['./edit-departement.component.css']
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.css']
 })
-export class EditDepartementComponent implements OnInit {
-
+export class EditProfileComponent implements OnInit {
   id!:number;
   errorMessage!:string;
 
   constructor(
-              private departementService:DepartementService, 
+              private profileService:ProfileService,
               private fb:FormBuilder,
               private router:ActivatedRoute,
               private redirectRoute:Router
@@ -22,10 +21,10 @@ export class EditDepartementComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=this.router.snapshot.params['id'];
-    this.departementService.getOneDepartement(this.id).subscribe({
-      next:(data)=>{        
-        this.editDepartement=this.fb.group({
-          nomDepartement:(data['nomDepartement'])
+    this.profileService.getOneProfile(this.id).subscribe({
+      next:(data)=>{
+        this.editProfile=this.fb.group({
+          libelle:(data['libelle'])
         })
       },
       error:(error)=>{
@@ -33,9 +32,9 @@ export class EditDepartementComponent implements OnInit {
       }
     })
   }
-  
-  editDepartement=this.fb.group({
-    nomDepartement:['',Validators.required]
+
+  editProfile=this.fb.group({
+    libelle:['',Validators.required]
   })
 
   /*Recuperation d'un profile a modifier*/
@@ -45,11 +44,11 @@ export class EditDepartementComponent implements OnInit {
 
 
   save(){
-    if(this.editDepartement.invalid) return
-    this.departementService.updateProfile(this.id,this.editDepartement.value).subscribe({
+    if(this.editProfile.invalid) return
+    this.profileService.updateProfile(this.id,this.editProfile.value).subscribe({
       next:(data)=>{
         alert("Modification effectuer avec success");
-        this.redirction()
+        this.redirction();
       },
       error:(error)=>{
         console.log(error);
@@ -59,11 +58,10 @@ export class EditDepartementComponent implements OnInit {
 
   /*Controle les champs de saisie*/
   get controleSaisie(){
-    return this.editDepartement.controls;
+    return this.editProfile.controls;
   }
-
   redirction(){
     this.redirectRoute.navigate(['/liste-profiles']);
   }
-  
+
 }

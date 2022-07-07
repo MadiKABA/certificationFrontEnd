@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
 import { Departement } from 'src/app/models/departement.model';
-import { EtatCompte } from 'src/app/models/etat.model';
+import { EtatCompte } from 'src/app/components/enums/etatCompte.enumm';
 import { Profile } from 'src/app/models/profile.model';
-import { AdminService } from 'src/app/services/admin.service';
-import { DepartementService } from 'src/app/services/departement.service';
-import { ProfileService } from 'src/app/services/profile.service';
+import { AdminService } from 'src/app/services/administrateurService/admin.service';
+import { DepartementService } from 'src/app/services/departementService/departement.service';
+import { ProfileService } from 'src/app/services/profileService/profile.service';
 
 @Component({
   selector: 'app-formulaire-user',
@@ -69,19 +69,19 @@ export class FormulaireUserComponent implements OnInit {
     departementDTO:[''],
     username:[''],
     password:[''],
-    
+
   })
 
   save(){
     this.serviceAdmin.saveAdmin(this.saveAdministrateur.value).subscribe({
       next:(data)=>{
         console.log(this.saveAdministrateur.value);
-        
+
       },
       error:(error)=>{
         this.errorMessage=error;
         console.log(error);
-        
+
       }
     })
   }
