@@ -8,10 +8,10 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Le libelle du profile</label>
-                    <input type="text" formControlName="libelle" class="champ-input" id="nom" required maxlength="30">
+                    <input type="text" formControlName="libelle" class="champ-input" id="nom" required maxlength="100">
                     <div *ngIf="controleSaisie['libelle'].touched && controleSaisie['libelle'].invalid">
                         <p *ngIf="controleSaisie['libelle'].errors"class="text-danger">
-                            le champs est obligatoire et doit contenir au moins 10 lettres
+                            le champs est obligatoire
                         </p>
                     </div>
                 </div>

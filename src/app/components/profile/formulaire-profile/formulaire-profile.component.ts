@@ -16,7 +16,7 @@ export class FormulaireProfileComponent implements OnInit {
   }
 
   addProfile=this.fb.group({
-    libelle:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]]
+    libelle:['',[Validators.required,Validators.pattern(/[a-zA-Z]/),Validators.minLength(3)]]
   })
 
   save(){
@@ -38,5 +38,6 @@ export class FormulaireProfileComponent implements OnInit {
   get controleSaisie(){
     return this.addProfile.controls;
   }
+
 
 }

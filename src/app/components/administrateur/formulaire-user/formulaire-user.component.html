@@ -1,6 +1,6 @@
 <div class="formulaire-container">
     <h1 class="text-center text-syle">Creer un compte</h1>
-<!--    {{this.saveAdministrateur.value | json}}-->
+    {{this.saveAdministrateur.value | json}}
     <div *ngIf="errorMessage">
         <p class="text-center text-danger">{{errorMessage}}</p>
     </div>
@@ -10,7 +10,15 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Nom</label>
-                    <input type="text" formControlName="nom" class="champ-input" id="nom">
+                    <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60">
+                    <div *ngIf="controleSaisie['nom'].touched && controleSaisie['nom'].invalid">
+                      <p *ngIf="controleSaisie['nom'].errors && controleSaisie['nom'].errors['required']" class="text-danger">
+                        * Le champs est obligatoire
+                      </p>
+                      <p *ngIf="controleSaisie['nom'].errors" class="text-danger">
+                        * Le champs ne doit pas avoir des caracteres speciaux
+                      </p>
+                    </div>
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Prenom</label>
@@ -20,7 +28,7 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Date de naissance</label>
-                    <input type="date" formArrayName="dateNaissance" class="champ-input" id="nom">
+                    <input type="date" formControlName="dateNaissance" class="champ-input" id="nom">
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Adresse email</label>

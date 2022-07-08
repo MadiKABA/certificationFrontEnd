@@ -1,4 +1,4 @@
 export enum EtatCompte{
-    Man= "ACTIVE",
-    Woman = "DESACTIVE"
+    acive= "ACTIVE",
+    desactive = "DESACTIVE"
 }

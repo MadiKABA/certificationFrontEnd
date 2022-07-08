@@ -1,6 +1,6 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
 import { Departement } from 'src/app/models/departement.model';
 import { EtatCompte } from 'src/app/components/enums/etatCompte.enumm';
@@ -54,36 +54,37 @@ export class FormulaireUserComponent implements OnInit {
       }
     })
   }
-  dateNaissance = new Date()
-  newDate=this.datePipe.transform(this.dateNaissance,('dd/MM/yyyy'))
-  // etatCompte!:EtatCompte
   saveAdministrateur=this.fb.group({
-    nom:[''],
-    prenoms:[''],
-    dateNaissance:[this.newDate],
-    email:[''],
-    etatCompte:[EtatCompte.Man],
-    telephone:[''],
-    posteOccupe:[''],
-    profileDTO:[''],
-    departementDTO:[''],
-    username:[''],
-    password:[''],
+    nom:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
+    prenoms:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
+    dateNaissance:['',[Validators.required]],
+    email:['',[Validators.required]],
+    etatCompte:[EtatCompte.acive],
+    telephone:['',[Validators.required,Validators.pattern(/[0-9]/)]],
+    posteOccupe:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
+    profileDTO:['',[Validators.required]],
+    departementDTO:['',[Validators.required]],
+    username:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
+    password:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
 
   })
 
   save(){
+    if (this.saveAdministrateur.invalid)return
     this.serviceAdmin.saveAdmin(this.saveAdministrateur.value).subscribe({
       next:(data)=>{
         console.log(this.saveAdministrateur.value);
-
+        alert("Administrateur ajouter avec success")
+        this.saveAdministrateur.reset({})
       },
       error:(error)=>{
         this.errorMessage=error;
         console.log(error);
-
       }
     })
+  }
+  get controleSaisie(){
+    return this.saveAdministrateur.controls;
   }
 
 }
