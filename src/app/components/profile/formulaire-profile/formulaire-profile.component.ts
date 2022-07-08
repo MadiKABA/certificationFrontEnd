@@ -16,7 +16,7 @@ export class FormulaireProfileComponent implements OnInit {
   }
 
   addProfile=this.fb.group({
-    libelle:['',Validators.required]
+    libelle:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]]
   })
 
   save(){

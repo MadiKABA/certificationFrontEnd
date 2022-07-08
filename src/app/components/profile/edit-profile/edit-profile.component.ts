@@ -34,7 +34,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   editProfile=this.fb.group({
-    libelle:['',Validators.required]
+    libelle:['',[Validators.required]]
   })
 
   /*Recuperation d'un profile a modifier*/
