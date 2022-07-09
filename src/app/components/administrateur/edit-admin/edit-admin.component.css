@@ -1,0 +1,84 @@
+.formulaire-container{
+  background: #F0F0F0;
+  border-radius: 10px;
+  /* display: flex; */
+  height: 750px;
+}
+
+.text-syle{
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #326799;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fom-container{
+  margin-bottom: 2rem;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+
+}
+
+.div-champ-input{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.champ-input{
+  height: 60px;
+  background: #FAFAFA;
+  border: 1px solid rgba(49, 80, 108, 0.22);
+  border-radius: 8px;
+}
+
+.test{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 1%;
+}
+.titre-input{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #326799;
+}
+/* Media query mobile */
+@media only screen and (min-width: 320px) and (max-width:767px) {
+  .div-champ-input{
+    flex-direction: column;
+  }
+  .test{
+    width: 100%;
+  }
+  .fom-container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .formulaire-container{
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+  .text-syle{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .save-btn{
+    width: 90%;
+  }
+
+}
+/* Media quer tablette */
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+}

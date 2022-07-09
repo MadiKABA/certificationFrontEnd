@@ -42,9 +42,9 @@
               <td>{{administrateur.posteOccupe}}</td>
               <td>{{administrateur.departementDTO.nomDepartement}}</td>
               <td>{{administrateur.profileDTO.libelle}}</td>
-              <td>{{administrateur.etatCompte}}</td>
-              <td class="style-icone"><i class="bi bi-pencil-square"></i></td>
-              <td class="style-icone"><i class="bi bi-trash3-fill icone-edit"></i></td>
+              <td [ngClass]="administrateur.etatCompte==='ACTIVE'? 'text-success':'text-danger'">{{administrateur.etatCompte}}</td>
+              <td class="style-icone" (click)="activeDesactive(administrateur)"><i class="bi bi-arrow-down-up icone-edit"></i></td>
+              <td class="style-icone" routerLink="/modifier-administrateur/{{administrateur.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
               <td class="style-icone" (click)="delete(administrateur.id)">
                 <i class="bi bi-trash3-fill icone-delete"></i>
               </td>

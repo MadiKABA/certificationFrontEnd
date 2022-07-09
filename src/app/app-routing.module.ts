@@ -8,10 +8,12 @@ import { FormulaireUserComponent } from './components/administrateur/formulaire-
 import { ListeDepartementComponent } from './components/departement/liste-departement/liste-departement.component';
 import { ListeUserComponent } from './components/administrateur/liste-user/liste-user.component';
 import { ProfileListeComponent } from './components/profile/profile-liste/profile-liste.component';
+import {EditAdminComponent} from "./components/administrateur/edit-admin/edit-admin.component";
 
 const routes: Routes = [
   {path:"addUser",component:FormulaireUserComponent},
   {path:"listeUser",component:ListeUserComponent},
+  {path:"modifier-administrateur/:id",component:EditAdminComponent},
 
   {path:"liste-profiles",component:ProfileListeComponent},
   {path:"ajoute-profile",component:FormulaireProfileComponent},

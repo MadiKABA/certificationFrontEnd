@@ -32,6 +32,32 @@ export class AdminService {
       catchError(this.handleError)
     )
   }
+  /*la mehode pour recuperer un administrateur*/
+  public getOneAdministrateur(id:number):Observable<number>{
+    return this.http.get<number>(this.host+"/"+id)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+  /*La methode pour modifier un administrateur*/
+  public editAdmin(id:number,administrateur:Administrateur):Observable<any>{
+    return this.http.put<any>(this.host+"/"+id,administrateur)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+  /*Active desactive compte*/
+  public desctiveCompte(administrateur:Administrateur):Observable<any>{
+    return this.http.put<any>(this.host+"/"+administrateur.id+"/desactive",administrateur).pipe(
+      catchError(this.handleError)
+    )
+  }
+  /*Active activer le compte compte*/
+  public activeCompte(administrateur:Administrateur):Observable<any>{
+    return this.http.put<any>(this.host+"/"+administrateur.id+"/active",administrateur).pipe(
+      catchError(this.handleError)
+    )
+  }
 
 
 
