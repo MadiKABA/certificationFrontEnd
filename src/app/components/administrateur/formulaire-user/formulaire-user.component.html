@@ -1,78 +1,134 @@
 <div class="formulaire-container">
     <h1 class="text-center text-syle">Creer un compte</h1>
-    {{this.saveAdministrateur.value | json}}
+<!--    {{this.saveAdministrateur.value | json}}-->
     <div *ngIf="errorMessage">
         <p class="text-center text-danger">{{errorMessage}}</p>
     </div>
     <div class="fom-container">
         <form [formGroup]="saveAdministrateur" (ngSubmit)="save()">
-            <!-- <input type="text" formControlName="etat" class="champ-input" id="nom"> -->
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Nom</label>
                     <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60">
                     <div *ngIf="controleSaisie['nom'].touched && controleSaisie['nom'].invalid">
                       <p *ngIf="controleSaisie['nom'].errors && controleSaisie['nom'].errors['required']" class="text-danger">
-                        * Le champs est obligatoire
+                        * Le champs nom est obligatoire
                       </p>
                       <p *ngIf="controleSaisie['nom'].errors" class="text-danger">
-                        * Le champs ne doit pas avoir des caracteres speciaux
+                        * Les caracteres speciaux sont pas autoriser
                       </p>
                     </div>
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Prenom</label>
                     <input type="text" formControlName="prenoms" class="champ-input" id="prenom">
+                    <div *ngIf="controleSaisie['prenoms'].touched && controleSaisie['prenoms'].invalid">
+                      <p *ngIf="controleSaisie['prenoms'].errors && controleSaisie['prenoms'].errors['required']" class="text-danger">
+                        * Le champs prenom est obligatoire
+                      </p>
+                      <p *ngIf="controleSaisie['prenoms'].errors" class="text-danger">
+                        * Les caracteres speciaux sont pas autoriser
+                      </p>
+                    </div>
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Date de naissance</label>
-                    <input type="date" formControlName="dateNaissance" class="champ-input" id="nom">
+                    <label class="titre-inpute" for="dateNaissance">Date de naissance</label>
+                    <input type="date" formControlName="dateNaissance" class="champ-input" id="dateNaissance">
+                  <div *ngIf="controleSaisie['dateNaissance'].touched && controleSaisie['dateNaissance'].invalid">
+                    <p *ngIf="controleSaisie['dateNaissance'].errors && controleSaisie['dateNaissance'].errors['required']" class="text-danger">
+                      * Le champs date de naissance est obligatoire
+                    </p>
+                  </div>
                 </div>
                 <div class="test">
-                    <label class="titre-inpute" for="prenom">Adresse email</label>
-                    <input type="text" formControlName="email" class="champ-input" id="prenom">
+                    <label class="titre-inpute" for="email">Adresse email</label>
+                    <input type="text" formControlName="email" class="champ-input" id="email">
+                  <div *ngIf="controleSaisie['email'].touched && controleSaisie['email'].invalid">
+                    <p *ngIf="controleSaisie['email'].errors && controleSaisie['email'].errors['required']" class="text-danger">
+                      * Le champs email est obligatoire et doit etre de type email
+                    </p>
+                  </div>
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Telephone</label>
-                    <input type="text" formControlName="telephone" class="champ-input" id="nom">
+                    <label class="titre-inpute" for="telephone">Telephone</label>
+                    <input type="text" formControlName="telephone" class="champ-input" id="telephone" maxlength="15">
+                  <div *ngIf="controleSaisie['telephone'].touched && controleSaisie['telephone'].invalid">
+                    <p *ngIf="controleSaisie['telephone'].errors && controleSaisie['telephone'].errors['required']" class="text-danger">
+                      * Le champs telephone est obligatoire
+                    </p>
+                    <p *ngIf="controleSaisie['telephone'].errors" class="text-danger">
+                      * Seulement les numero qui sont autorises
+                    </p>
+                  </div>
                 </div>
                 <div class="test">
-                    <label class="titre-inpute" for="prenom">Poste occupe</label>
-                    <input type="text" formControlName="posteOccupe" class="champ-input" id="prenom">
+                    <label class="titre-inpute" for="posteOccupe">Poste occupe</label>
+                    <input type="text" formControlName="posteOccupe" class="champ-input" id="posteOccupe">
+                  <div *ngIf="controleSaisie['posteOccupe'].touched && controleSaisie['posteOccupe'].invalid">
+                    <p *ngIf="controleSaisie['posteOccupe'].errors && controleSaisie['posteOccupe'].errors['required']" class="text-danger">
+                      * Le champs telephone est obligatoire
+                    </p>
+                    <p *ngIf="controleSaisie['posteOccupe'].errors" class="text-danger">
+                      * Les caracteres speciaux sont pas autoriser
+                    </p>
+                  </div>
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Profile</label>
-                    <select class="champ-input" formControlName="profileDTO">
+                    <label class="titre-inpute" for="profileDTO">Profile</label>
+                    <select class="champ-input" formControlName="profileDTO" id="profileDTO">
                         <option>Selection le profile</option>
                         <option *ngFor="let profile of profiles" [ngValue]="profile">{{profile.libelle}}</option>
                     </select>
+                  <div *ngIf="controleSaisie['profileDTO'].touched && controleSaisie['profileDTO'].invalid">
+                    <p *ngIf="controleSaisie['profileDTO'].errors && controleSaisie['profileDTO'].errors['required']" class="text-danger">
+                      * Le champs profile est obligatoire
+                    </p>
+                  </div>
                 </div>
                 <div class="test">
-                    <label class="titre-inpute" for="nom">Departement</label>
-                    <select class="champ-input" formControlName="departementDTO">
+                    <label class="titre-inpute" for="departementDTO">Departement</label>
+                    <select class="champ-input" formControlName="departementDTO" id="departementDTO">
                         <option>Selection le departement</option>
                         <option *ngFor="let departement of departements" [ngValue]="departement">{{departement.nomDepartement}}</option>
                     </select>
+                  <div *ngIf="controleSaisie['departementDTO'].touched && controleSaisie['departementDTO'].invalid">
+                    <p *ngIf="controleSaisie['departementDTO'].errors && controleSaisie['departementDTO'].errors['required']" class="text-danger">
+                      * Le champs departement est obligatoire
+                    </p>
+                  </div>
                 </div>
             </div>
             <div class="div-champ-input">
                 <div class="test">
-                    <label class="titre-inpute" for="prenom">Nom d'utilisateur</label>
-                    <input type="text" formControlName="username" class="champ-input" id="nom">
+                    <label class="titre-inpute" for="username">Nom d'utilisateur</label>
+                    <input type="text" formControlName="username" class="champ-input" id="username">
+                  <div *ngIf="controleSaisie['username'].touched && controleSaisie['username'].invalid">
+                    <p *ngIf="controleSaisie['username'].errors && controleSaisie['username'].errors['required']" class="text-danger">
+                      * Le champs est obligatoire
+                    </p>
+                    <p *ngIf="controleSaisie['username'].errors" class="text-danger">
+                      * Le champs ne doit pas avoir des caracteres speciaux
+                    </p>
+                  </div>
                 </div>
                 <div class="test">
-                    <label class="titre-inpute" for="prenom">Mot de passe</label>
-                    <input type="text" formControlName="password" class="champ-input" id="prenom">
+                    <label class="titre-inpute" for="password">Mot de passe</label>
+                    <input type="text" formControlName="password" class="champ-input" id="password">
+                  <div *ngIf="controleSaisie['password'].touched && controleSaisie['password'].invalid">
+                    <p *ngIf="controleSaisie['password'].errors && controleSaisie['password'].errors['required']" class="text-danger">
+                      * Le champs est obligatoire
+                    </p>
+                  </div>
                 </div>
             </div>
             <div class="style-btn-envoyer my-2">
-                <button class="save-btn">Enregistrer</button>
+                <button [disabled]="saveAdministrateur.invalid" class="save-btn">Enregistrer</button>
             </div>
         </form>
     </div>

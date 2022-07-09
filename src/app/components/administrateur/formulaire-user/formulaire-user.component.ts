@@ -64,8 +64,8 @@ export class FormulaireUserComponent implements OnInit {
     posteOccupe:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
     profileDTO:['',[Validators.required]],
     departementDTO:['',[Validators.required]],
-    username:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
-    password:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
+    username:['',[Validators.required]],
+    password:['',[Validators.required]]
 
   })
 

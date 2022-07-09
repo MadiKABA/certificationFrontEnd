@@ -22,13 +22,12 @@
               <th scope="col">Nom</th>
               <th scope="col">Prenoms</th>
               <th scope="col">Email</th>
-              <!-- <th scope="col">Date de naissance</th> -->
+               <th scope="col">Date de naissance</th>
               <th scope="col">Telephone</th>
               <th scope="col">Poste occupe</th>
               <th scope="col">Departement</th>
               <th scope="col">Profile</th>
               <th scope="col">Etat compte</th>
-              <th scope="col">Username</th>
               <th scope="col" colspan="3" class="text-center">Actions</th>
             </tr>
           </thead>
@@ -38,13 +37,12 @@
               <td>{{administrateur.nom}}</td>
               <td>{{administrateur.prenoms}}</td>
               <td>{{administrateur.email}}</td>
-              <!-- <td>{{administrateur.dateNaissance}}</td> -->
+               <td>{{administrateur.dateNaissance}}</td>
               <td>{{administrateur.telephone}}</td>
               <td>{{administrateur.posteOccupe}}</td>
               <td>{{administrateur.departementDTO.nomDepartement}}</td>
               <td>{{administrateur.profileDTO.libelle}}</td>
               <td>{{administrateur.etatCompte}}</td>
-              <td>{{administrateur.username}}</td>
               <td class="style-icone"><i class="bi bi-pencil-square"></i></td>
               <td class="style-icone"><i class="bi bi-trash3-fill icone-edit"></i></td>
               <td class="style-icone" (click)="delete(administrateur.id)">
