@@ -45,7 +45,7 @@ export class EditAdminComponent implements OnInit {
           prenoms:(data['prenoms']),
           dateNaissance:(data['dateNaissance']),
           email:(data['email']),
-          etatCompte:[EtatCompte.acive],
+          etatCompte:[this.data.etatCompte==='ACTIVE'?EtatCompte.acive:EtatCompte.desactive],
           telephone:(data['email']),
           posteOccupe:(data['posteOccupe']),
           profileDTO:(data.profileDTO['libelle']),
@@ -66,7 +66,7 @@ export class EditAdminComponent implements OnInit {
     prenoms:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
     dateNaissance:['',[Validators.required]],
     email:['',[Validators.required]],
-    etatCompte:[EtatCompte.acive],
+    etatCompte:[''],
     telephone:['',[Validators.required,Validators.pattern(/[0-9]/)]],
     posteOccupe:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
     profileDTO:['',[Validators.required]],
@@ -76,6 +76,7 @@ export class EditAdminComponent implements OnInit {
 
   })
   save(){
+    console.log(this.saveAdministrateur.value);
     // if (this.saveAdministrateur.invalid)return
     this.adminService.editAdmin(this.id,this.saveAdministrateur.value).subscribe({
       next:(data)=>{
