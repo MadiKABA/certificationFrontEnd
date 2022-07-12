@@ -1,3 +1,8 @@
+<!-- <div class="container">
+    <div class="col-md-6 offset-3">
+
+    </div>
+</div> -->
 <div class="formulaire-container">
     <h1 class="text-center text-syle">Creer un departement</h1>
     <div class="fom-container">
@@ -8,12 +13,19 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Le Nom de departement</label>
-                    <input type="text" formControlName="nomDepartement" class="champ-input" id="nom" required maxlength="30">
-                    <div *ngIf="controleSaisie['nomDepartement'].touched && controleSaisie['nomDepartement'].invalid">
-                        <p *ngIf="controleSaisie['nomDepartement'].errors" class="text-danger">
-                            le champs est obligatoire
-                        </p>
-                    </div>
+                    <input type="text" formControlName="nomDepartement" class="champ-input" id="nom" maxlength="30">
+                    <span class="text-danger" 
+                        *ngIf="addDepartement.controls['nomDepartement'].touched
+                        && addDepartement.controls['nomDepartement'].errors
+                        && addDepartement.controls['nomDepartement'].errors['required']">
+                        Le champs de departement est obligatoire
+                    </span>
+                    <span class="text-danger" 
+                        *ngIf="addDepartement.controls['nomDepartement'].touched
+                        && addDepartement.controls['nomDepartement'].errors
+                        && addDepartement.controls['nomDepartement'].errors['minlength']">
+                        Le champs doit avoir au minumum 4 caracteres
+                    </span>
                 </div>
             </div>
             <div class="style-btn-envoyer my-2">

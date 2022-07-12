@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   hostAdmin:"http://localhost:8080/administrateurs",
   hostProfile:"http://localhost:8080/profiles",
-  hostDepartement:"http://localhost:8080/departements"
+  hostDepartement:"http://localhost:8080/departements",
+  hostEtudiant:"http://localhost:8080/etudiants"
 };
 
 /*

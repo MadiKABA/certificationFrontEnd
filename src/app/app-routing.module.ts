@@ -9,11 +9,14 @@ import { ListeDepartementComponent } from './components/departement/liste-depart
 import { ListeUserComponent } from './components/administrateur/liste-user/liste-user.component';
 import { ProfileListeComponent } from './components/profile/profile-liste/profile-liste.component';
 import {EditAdminComponent} from "./components/administrateur/edit-admin/edit-admin.component";
+import { ListeEtudiantComponent } from './components/etudiant/liste-etudiant/liste-etudiant.component';
 
 const routes: Routes = [
   {path:"addUser",component:FormulaireUserComponent},
   {path:"listeUser",component:ListeUserComponent},
   {path:"modifier-administrateur/:id",component:EditAdminComponent},
+
+  {path:"liste-etudiants",component:ListeEtudiantComponent},
 
   {path:"liste-profiles",component:ProfileListeComponent},
   {path:"ajoute-profile",component:FormulaireProfileComponent},

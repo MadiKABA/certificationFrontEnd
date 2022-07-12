@@ -17,6 +17,7 @@ import { ListeDepartementComponent } from './components/departement/liste-depart
 import { FormulaireDepartementComponent } from './components/departement/formulaire-departement/formulaire-departement.component';
 import { EditDepartementComponent } from './components/departement/edit-departement/edit-departement.component';
 import { EditAdminComponent } from './components/administrateur/edit-admin/edit-admin.component';
+import { ListeEtudiantComponent } from './components/etudiant/liste-etudiant/liste-etudiant.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditAdminComponent } from './components/administrateur/edit-admin/edit-
     ListeDepartementComponent,
     FormulaireDepartementComponent,
     EditDepartementComponent,
-    EditAdminComponent
+    EditAdminComponent,
+    ListeEtudiantComponent
   ],
   imports: [
     BrowserModule,

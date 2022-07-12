@@ -11,7 +11,7 @@ export class AdminService {
   private host=environment.hostAdmin;
 
   constructor(private http:HttpClient) { }
-  /*La methode pour recuperer un administrateur*/
+  /*La methode pour recuperer tous les administrateur*/
   public getAllAdmin():Observable<any>{
     return this.http.get(this.host).pipe(
       catchError(this.handleError)
@@ -59,7 +59,13 @@ export class AdminService {
     )
   }
 
-
+  /*La methode pour chercher un administrateur par son nom*/
+  public rechercheAdminByName(motCle:string):Observable<any>{
+    return this.http.get<any>(this.host+"/recherche?recherche="+motCle)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
 
   //la gestion des erreur.
   private handleError(error: HttpErrorResponse) {

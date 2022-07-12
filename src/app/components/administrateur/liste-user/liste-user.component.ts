@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
 import { AdminService } from 'src/app/services/administrateurService/admin.service';
 import { EtatCompte } from '../../enums/etatCompte.enumm';
@@ -11,10 +12,14 @@ import { EtatCompte } from '../../enums/etatCompte.enumm';
 export class ListeUserComponent implements OnInit {
   administrateurs:any
   messageError!:string
+  rechercheAdmin!:FormGroup
 
-  constructor(private serviceAdmin:AdminService) { }
+  constructor(private serviceAdmin:AdminService,private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.rechercheAdmin=this.fb.group({
+      motCle:this.fb.control("")
+    })
     this.getAll();
   }
 
@@ -70,6 +75,20 @@ export class ListeUserComponent implements OnInit {
         }
       })
     }
+  }
+
+  handleAdmin(){
+    //alert (this.rechercheAdmin.value.motCle);
+    let key=this.rechercheAdmin.value.motCle;
+    this.serviceAdmin.rechercheAdminByName(key).subscribe({
+      next:(data)=>{
+        this.administrateurs=data
+      },
+      error:(error)=>{
+        console.log(error);
+        
+      }
+    })
   }
 
 }

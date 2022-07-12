@@ -18,7 +18,7 @@ export class FormulaireDepartementComponent implements OnInit {
 
 
   addDepartement=this.fb.group({
-    nomDepartement:['',Validators.required]
+    nomDepartement:this.fb.control(null,[Validators.required,Validators.minLength(3)])
   })
 
   save(){
