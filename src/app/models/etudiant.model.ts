@@ -15,6 +15,7 @@ export interface Etudiant{
     profileDTO:Profile;
     etatCompte:EtatCompte
     filiereDTO:Filiere;
+    photo:string
     username:string;
     password:string;
 }
