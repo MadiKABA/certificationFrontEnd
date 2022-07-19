@@ -11,7 +11,7 @@ export interface Etudiant{
     email:string;
     telephone:string;
     matricule:string;
-    niveauEtude:NiveauEtude;
+    niveauEtude:string;
     profileDTO:Profile;
     etatCompte:EtatCompte
     filiereDTO:Filiere;

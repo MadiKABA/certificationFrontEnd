@@ -41,6 +41,14 @@ export class EtudiantService {
     )
   }
 
+  /*La methode pour enregistrer un etudinat*/
+  public saveEtudiant(etudiant:Etudiant):Observable<Etudiant[]>{
+    return this.http.post<Etudiant[]>(this.host,etudiant)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
 
   //la gestion des erreur.
   private handleError(error: HttpErrorResponse) {
