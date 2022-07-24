@@ -85,7 +85,7 @@
         <div class="test">
           <label class="titre-inpute" for="profileDTO">Profile</label>
           <select class="champ-input" formControlName="profileDTO" id="profileDTO" required>
-            <option *ngIf="data" [ngValue]="data.profileDTO" selected>{{data.profileDTO.libelle}}</option>
+            <option *ngIf="data" [hidden]="true" [ngValue]="data.profileDTO" [selected]="data.profileDTO.libelle">{{data.profileDTO.libelle}}</option>
             <option *ngFor="let profile of profiles" [ngValue]="profile">{{profile.libelle}}</option>
           </select>
           <div *ngIf="controleSaisie['profileDTO'].touched && controleSaisie['profileDTO'].invalid">
@@ -98,7 +98,7 @@
           <label class="titre-inpute" for="departementDTO">Departement</label>
 <!--          <input type="text" formControlName="departementDTO">-->
           <select class="champ-input" formControlName="departementDTO" id="departementDTO" required>
-            <option *ngIf="data" [ngValue]="data.departementDTO" selected>{{data.departementDTO.nomDepartement}}</option>
+            <option *ngIf="data" [ngValue]="data.departementDTO" [selected]="data.departementDTO.nomDepartement">{{data.departementDTO.nomDepartement}}</option>
             <option *ngFor="let departement of departements" [ngValue]="departement">{{departement.nomDepartement}}</option>
           </select>
           <div *ngIf="controleSaisie['departementDTO'].touched && controleSaisie['departementDTO'].invalid">

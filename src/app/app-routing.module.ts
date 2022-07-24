@@ -19,6 +19,7 @@ const routes: Routes = [
 
   {path:"liste-etudiants",component:ListeEtudiantComponent},
   {path:"ajouter-etudiant",component:AjouterEtudiantComponent},
+  {path:"modifier-etudiant/:id",component:AjouterEtudiantComponent},
 
   {path:"liste-profiles",component:ProfileListeComponent},
   {path:"ajoute-profile",component:FormulaireProfileComponent},

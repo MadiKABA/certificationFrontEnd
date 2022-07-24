@@ -49,6 +49,22 @@ export class EtudiantService {
       )
   }
 
+  /*La methode pour modifier un administrateur*/
+  public editEtudiant(id:number,etudiant:Etudiant):Observable<any>{
+    return this.http.put<any>(this.host+"/"+id,etudiant)
+      .pipe(
+        catchError(this.handleError)
+    )
+  }
+
+  /*la mehode pour recuperer un etudiant*/
+  public getOneEtudiant(id:number):Observable<number>{
+    return this.http.get<number>(this.host+"/"+id)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
 
   //la gestion des erreur.
   private handleError(error: HttpErrorResponse) {

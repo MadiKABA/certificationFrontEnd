@@ -48,8 +48,8 @@ export class EditAdminComponent implements OnInit {
           etatCompte:[this.data.etatCompte==='ACTIVE'?EtatCompte.acive:EtatCompte.desactive],
           telephone:(data['email']),
           posteOccupe:(data['posteOccupe']),
-          profileDTO:(data.profileDTO['libelle']),
-          departementDTO:(data.departementDTO['nomDepartement']),
+          profileDTO:({id:data.profileDTO.id,libelle:data.profileDTO.libelle}),
+          departementDTO:({id:data.departementDTO.id,nomDepartement:data.departementDTO.nomDepartement}),
           username:(data['username']),
           password:(data['password'])
         })

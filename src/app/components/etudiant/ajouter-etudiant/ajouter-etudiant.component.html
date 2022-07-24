@@ -9,7 +9,7 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="nom">Nom</label>
-                    <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60">
+                    <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60" required>
                     <span class="text-danger" 
                         *ngIf="saveEtudiant.controls['nom'].touched
                         && saveEtudiant.controls['nom'].errors
@@ -25,7 +25,7 @@
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="prenom">Prenom</label>
-                    <input type="text" formControlName="prenoms" class="champ-input" id="prenom">
+                    <input type="text" formControlName="prenoms" class="champ-input" id="prenom" required>
                     <span class="text-danger" 
                         *ngIf="saveEtudiant.controls['prenoms'].touched
                         && saveEtudiant.controls['prenoms'].errors
@@ -43,7 +43,7 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="dateNaissance">Date de naissance</label>
-                    <input type="date" formControlName="dateNaissance" class="champ-input" id="dateNaissance">
+                    <input type="date" formControlName="dateNaissance" class="champ-input" id="dateNaissance" required>
                     <span class="text-danger" 
                     *ngIf="saveEtudiant.controls['dateNaissance'].touched
                     && saveEtudiant.controls['dateNaissance'].errors
@@ -53,7 +53,7 @@
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="email">Adresse email</label>
-                    <input type="text" formControlName="email" class="champ-input" id="email">
+                    <input type="text" formControlName="email" class="champ-input" id="email" required>
                 <span class="text-danger" 
                     *ngIf="saveEtudiant.controls['email'].touched
                     && saveEtudiant.controls['email'].errors
@@ -71,7 +71,7 @@
             <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="telephone">Telephone</label>
-                    <input type="text" formControlName="telephone" class="champ-input" id="telephone" maxlength="15">
+                    <input type="text" formControlName="telephone" class="champ-input" id="telephone" maxlength="15" required>
                 <span class="text-danger" 
                     *ngIf="saveEtudiant.controls['telephone'].touched
                     && saveEtudiant.controls['telephone'].errors
@@ -93,7 +93,7 @@
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="matricule">Matricule</label>
-                    <input type="text" class="champ-input" formControlName="matricule" id="matricule">
+                    <input type="text" class="champ-input" formControlName="matricule" id="matricule" required>
                     <span class="text-danger" 
                     *ngIf="saveEtudiant.controls['matricule'].touched
                     && saveEtudiant.controls['matricule'].errors
@@ -111,8 +111,9 @@
             <div class="div-champ-input">
                 <div class="test">
                   <label class="titre-inpute" for="departementDTO">Filiere</label>
-                  <select class="champ-input" formControlName="filiereDTO" id="departementDTO">
+                  <select class="champ-input" formControlName="filiereDTO" id="departementDTO" required>
                       <option>Selection le departement</option>
+                      <option *ngIf="data" [hidden]="true" [ngValue]="data.filiereDTO" [selected]="data.filiereDTO.libelle">{{data.filiereDTO.libelle}}</option>
                       <option *ngFor="let filiere of filieres" [ngValue]="filiere">{{filiere.libelle}}</option>
                   </select>
                   <span class="text-danger" 
@@ -124,7 +125,7 @@
                 </div>
                 <div class="test">
                   <label class="titre-inpute" for="profileDTO">Niveau d'etude</label>
-                  <select class="champ-input" id="profileDTO" formControlName="niveauEtude">
+                  <select class="champ-input" id="profileDTO" formControlName="niveauEtude" required>
                       <option value="PremierCycle">Premier cycle</option>
                       <option value="DeuxiemeCycle">deuxieme cycle cycle</option>
                       <option value="TroisiemeCyle">Troisieme cycle cycle</option>
@@ -141,7 +142,7 @@
             <div class="div-champ-input">
               <div class="test">
                   <label class="titre-inpute" for="username">Nom d'utilisateur</label>
-                  <input type="text" formControlName="username" class="champ-input" id="username" maxlength="50">
+                  <input type="text" formControlName="username" class="champ-input" id="username" maxlength="50" required>
                 <span class="text-danger" 
                   *ngIf="saveEtudiant.controls['username'].touched
                   && saveEtudiant.controls['username'].errors
@@ -157,7 +158,7 @@
               </div>
               <div class="test">
                   <label class="titre-inpute" for="password">Mot de passe</label>
-                  <input type="text" formControlName="password" class="champ-input" id="password" maxlength="50">
+                  <input type="text" formControlName="password" class="champ-input" id="password" maxlength="50" required>
                 <span class="text-danger" 
                   *ngIf="saveEtudiant.controls['password'].touched
                   && saveEtudiant.controls['password'].errors
@@ -172,12 +173,12 @@
                 </span>
               </div>
             </div>
-            <div class="div-champ-input">
+            <!-- <div class="div-champ-input">
                 <div class="test">
                     <label class="titre-inpute" for="email">Photo</label>
                     <input type="text" formControlName="email" class="champ-input" id="email">
                 </div>
-            </div>
+            </div> -->
             <div class="style-btn-envoyer my-2">
                 <button [disabled]="saveEtudiant.invalid" class="save-btn">Enregistrer</button>
             </div>
