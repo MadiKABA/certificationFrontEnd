@@ -100,6 +100,14 @@ button{
 }
 
 
+.text-syle{
+    font-weight: 700;
+    font-size: 40px;
+    /* text-align: center; */
+    color: #326799;
+}
+
+
 
 /* Media query mobile */
 @media only screen and (min-width: 320px) and (max-width:767px) {
