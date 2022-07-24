@@ -1,5 +1,6 @@
 <div class="formulaire-container">
-    <h1 class="text-center text-syle">Creer un etudiant</h1>
+    <h1 *ngIf="!data" class="text-center text-syle">Creer un etudiant</h1>
+    <h1 *ngIf="data" class="text-center text-syle">Modifier un etudiant</h1>
 <!--    {{this.saveAdministrateur.value | json}}-->
     <div *ngIf="errorMessage">
         <p class="text-center text-danger">{{errorMessage}}</p>
