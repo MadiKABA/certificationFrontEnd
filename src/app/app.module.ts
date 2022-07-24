@@ -19,6 +19,8 @@ import { EditDepartementComponent } from './components/departement/edit-departem
 import { EditAdminComponent } from './components/administrateur/edit-admin/edit-admin.component';
 import { ListeEtudiantComponent } from './components/etudiant/liste-etudiant/liste-etudiant.component';
 import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant/ajouter-etudiant.component';
+import { ListeDemandeComponent } from './components/demande/liste-demande/liste-demande.component';
+import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant
     EditDepartementComponent,
     EditAdminComponent,
     ListeEtudiantComponent,
-    AjouterEtudiantComponent
+    AjouterEtudiantComponent,
+    ListeDemandeComponent,
+    UpdateDemandeComponent
   ],
   imports: [
     BrowserModule,

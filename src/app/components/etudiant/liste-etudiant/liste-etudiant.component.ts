@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Etudiant } from 'src/app/models/etudiant.model';
 import { EtudiantService } from 'src/app/services/etudiantService/etudiant-service.service';
 
@@ -9,10 +10,12 @@ import { EtudiantService } from 'src/app/services/etudiantService/etudiant-servi
 })
 export class ListeEtudiantComponent implements OnInit {
   etudiants!:Etudiant[];
-  messageError!:string
+  messageError!:string;
+  motCle!:string
 
   constructor(
-              private serviceEtudiant:EtudiantService
+              private serviceEtudiant:EtudiantService,
+              private fb:FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -73,4 +76,12 @@ export class ListeEtudiantComponent implements OnInit {
       })
     }
   }
+
+
+  /*La methode qui permet d'afficher le resultat de la recherche*/
+  handleEtudiant(){
+  }
+  rechercheEtudiant=this.fb.group({
+    motCle:this.fb.control('')
+  })
 }

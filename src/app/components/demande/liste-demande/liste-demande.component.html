@@ -1,0 +1,36 @@
+<h1>La liste des Demandes</h1>
+<!-- <p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p> -->
+<!-- <p *ngIf="!demandes" class="text-info text-center">Aucune demande effectuer</p> -->
+<div class="formulaire-container">
+    <div class="button-add-input-search my-4 mx-3">
+        <button class="button-add-user">
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajouter-etudiant"></i>
+            <span class="titre-btn-add-user" routerLink="/ajouter-etudiant">Ajouter une demande</span>
+        </button>
+        <div>
+          <!-- <form [formGroup]="rechercheAdmin" (ngSubmit)="handleAdmin()">
+            {{this.rechercheAdmin.value | json}}
+            <input type="text" formControlName="motCle" class="input-search-admin" placeholder="Rechercher un utilisateur" maxlength="30">
+            <button class="btn-search-admin">
+                <i class="bi bi-search"></i>
+            </button>
+          </form> -->
+        </div>
+    </div>
+    <hr>
+    <div class="div-table-data">
+        <div class="card-demandes">
+            <div class="cadre-image-et-contenu" *ngFor="let demande of demandes">
+                <img src="../../../../assets/imagejabbar.jpeg" class="img-fluid style-image">
+                <div class="demande">
+                    <p>Objet: {{demande.objet}}</p>
+                    <p>Date d'envoi: {{demande.dateDemande  | date:'MM/d/yy' }}</p>
+                    <p>Par: {{demande.etudiant.prenoms+ " " +demande.etudiant.nom}}</p>
+                    <p>Statut: {{demande.statutDemande}}</p>
+                    <button>Detail</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

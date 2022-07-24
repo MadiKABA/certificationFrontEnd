@@ -8,7 +8,8 @@ export const environment = {
   hostProfile:"http://localhost:8080/profiles",
   hostDepartement:"http://localhost:8080/departements",
   hostEtudiant:"http://localhost:8080/etudiants",
-  hostFiliere:"http://localhost:8080/filieres"
+  hostFiliere:"http://localhost:8080/filieres",
+  hostDemande:"http://localhost:8080/demandes"
 };
 
 /*

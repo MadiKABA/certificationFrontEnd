@@ -7,13 +7,13 @@
             <span class="titre-btn-add-user" routerLink="/ajouter-etudiant">Ajouter un etudiant</span>
         </button>
         <div>
-          <!-- <form [formGroup]="rechercheAdmin" (ngSubmit)="handleAdmin()">
-            {{this.rechercheAdmin.value | json}}
+          <form [formGroup]="rechercheEtudiant" (ngSubmit)="handleEtudiant()">
+            <!-- {{this.rechercheEtudiant.value | json}} -->
             <input type="text" formControlName="motCle" class="input-search-admin" placeholder="Rechercher un utilisateur" maxlength="30">
             <button class="btn-search-admin">
                 <i class="bi bi-search"></i>
             </button>
-          </form> -->
+          </form>
         </div>
     </div>
     <hr>

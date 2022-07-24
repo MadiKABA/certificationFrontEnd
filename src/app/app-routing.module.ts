@@ -11,6 +11,8 @@ import { ProfileListeComponent } from './components/profile/profile-liste/profil
 import {EditAdminComponent} from "./components/administrateur/edit-admin/edit-admin.component";
 import { ListeEtudiantComponent } from './components/etudiant/liste-etudiant/liste-etudiant.component';
 import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant/ajouter-etudiant.component';
+import { ListeDemandeComponent } from './components/demande/liste-demande/liste-demande.component';
+import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 
 const routes: Routes = [
   {path:"addUser",component:FormulaireUserComponent},
@@ -28,7 +30,11 @@ const routes: Routes = [
 
   {path:"liste-departement",component:ListeDepartementComponent},
   {path:"ajout-departement",component:FormulaireDepartementComponent},
-  {path:"modifife-departement/:id",component:EditDepartementComponent}
+  {path:"modifife-departement/:id",component:EditDepartementComponent},
+
+  {path:"liste-demandes",component:ListeDemandeComponent},
+  {path:"ajouter-demande",component:UpdateDemandeComponent},
+  {path:"modifier-demande/:id",component:UpdateDemandeComponent}
 ];
 
 @NgModule({
