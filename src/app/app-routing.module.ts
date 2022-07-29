@@ -14,6 +14,7 @@ import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant
 import { ListeDemandeComponent } from './components/demande/liste-demande/liste-demande.component';
 import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
+import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 
 const routes: Routes = [
   {path:"addUser",component:FormulaireUserComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
 
   {path:"liste-demandes",component:ListeDemandeComponent},
   {path:"ajouter-demande",component:UpdateDemandeComponent},
-  {path:"modifier-demande/:id",component:UpdateDemandeComponent}
+  {path:"modifier-demande/:id",component:UpdateDemandeComponent},
+  {path:"detail-demande/:id",component:DetailDemandeComponent}
 ];
 
 @NgModule({

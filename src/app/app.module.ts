@@ -22,6 +22,7 @@ import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant
 import { ListeDemandeComponent } from './components/demande/liste-demande/liste-demande.component';
 import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
+import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/d
     AjouterEtudiantComponent,
     ListeDemandeComponent,
     UpdateDemandeComponent,
-    DetailEtudiantComponent
+    DetailEtudiantComponent,
+    DetailDemandeComponent
   ],
   imports: [
     BrowserModule,

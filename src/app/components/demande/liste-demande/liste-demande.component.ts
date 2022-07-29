@@ -9,6 +9,7 @@ import { DemandeServiceService } from 'src/app/services/demandeService/demande-s
 })
 export class ListeDemandeComponent implements OnInit {
   demandes!:Demande[];
+  id!:number;
 
   constructor(
     private serviceDemande:DemandeServiceService
@@ -31,5 +32,16 @@ export class ListeDemandeComponent implements OnInit {
       }
     })
   }
-
+  /*La methode qui permet de supprimer une demande*/
+  delete(id:number){
+    this.serviceDemande.deleteDemande(id).subscribe({
+      next:(data)=>{
+        this.getAllDemande();
+      },
+      error:(error)=>{
+        console.log(error);
+        
+      }
+    })
+  }
 }

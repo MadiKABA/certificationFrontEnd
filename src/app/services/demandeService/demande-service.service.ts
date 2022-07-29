@@ -19,6 +19,32 @@ export class DemandeServiceService {
     )
   }
 
+  /*La methode pour recuperer une demande*/
+  public getOnDemande(id:number):Observable<Demande>{
+    return this.http.get<Demande>(this.host+"/"+id).pipe(
+      catchError(this.handleError)
+    )
+  }
+  /*La methode pour valider une demande*/
+  public validatedDemande(demande:Demande):Observable<Demande>{
+    return this.http.put<Demande>(this.host+"/valider/"+demande.id,demande).pipe(
+      catchError(this.handleError)
+    )
+  }
+  /*La methode pour rejeter une demande*/
+  public rejeterDemande(demande:Demande):Observable<Demande>{
+    return this.http.put<Demande>(this.host+"/rejeter/"+demande.id,demande).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  /*La methode qui permet de supprimer une demande*/
+  public deleteDemande(id:number):Observable<any>{
+    return this.http.delete(this.host+"/"+id).pipe(
+      catchError(this.handleError)
+    )
+  }
+
 
 
 //la gestion des erreur.

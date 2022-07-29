@@ -106,6 +106,15 @@ button{
     /* text-align: center; */
     color: #326799;
 }
+.delete-btn{
+    background: #ce0033;
+}
+.approuver-style{
+    border-color: 2px green solid;
+}
+.rejeter-style{
+    border: color 2px #ce0033;
+}
 
 
 
