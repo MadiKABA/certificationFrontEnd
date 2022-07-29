@@ -21,6 +21,7 @@ import { ListeEtudiantComponent } from './components/etudiant/liste-etudiant/lis
 import { AjouterEtudiantComponent } from './components/etudiant/ajouter-etudiant/ajouter-etudiant.component';
 import { ListeDemandeComponent } from './components/demande/liste-demande/liste-demande.component';
 import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
+import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UpdateDemandeComponent } from './components/demande/update-demande/upda
     ListeEtudiantComponent,
     AjouterEtudiantComponent,
     ListeDemandeComponent,
-    UpdateDemandeComponent
+    UpdateDemandeComponent,
+    DetailEtudiantComponent
   ],
   imports: [
     BrowserModule,

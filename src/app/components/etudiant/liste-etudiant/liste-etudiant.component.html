@@ -47,6 +47,9 @@
               <td>{{etudiant.telephone}}</td>
               <td [ngClass]="etudiant.etatCompte==='ACTIVE'? 'text-success':'text-danger'">{{etudiant.etatCompte}}</td>
               <td class="style-icone" (click)="activeDesactive(etudiant)"><i class="bi bi-arrow-down-up icone-edit"></i></td>
+              <td class="style-icone text-info" routerLink="/detail-etudiant/{{etudiant.id}}">
+                <i class="bi bi-eye-fill"></i>
+              </td>
               <td class="style-icone" routerLink="/modifier-etudiant/{{etudiant.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
               <td class="style-icone" (click)="delete(etudiant)">
                 <i class="bi bi-trash3-fill icone-delete"></i>

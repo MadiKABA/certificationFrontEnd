@@ -1,0 +1,35 @@
+<div class="formulaire-container">
+    <div class="container-detail-and-demande-etudiant">
+          <div class="container-detail mb-2" *ngIf="etudiant">
+               <h1>Le detail de l'etudiant</h1>
+               <div class="card">
+                    <div class="cadre-image-et-contenu">
+                         <img src="../../../../assets/imagejabbar.jpeg" class="img-fluid style-image">
+                         <div class="demande">
+                             <h5 class="mx-4">Prenoms: {{etudiant.prenoms}}</h5>
+                             <h5 class="mx-4">Nom: {{etudiant.nom}}</h5>
+                             <h5 class="mx-4">Filiere: {{etudiant.filiereDTO.libelle}}</h5>
+                             <h5 class="mx-4">Niveau d'etude: {{etudiant.niveauEtude}}</h5>
+                             <h5 class="mx-4">Matricule: {{etudiant.matricule}}</h5>
+                         </div>
+                     </div>
+               </div>
+               <button routerLink="/liste-etudiants" class="mt-2">Retour</button>
+          </div>
+          <h1 *ngIf="demandeEtudiant.length==0" class="mx-2">Aucune demande effectuer</h1>
+          <div class="container-demandes mx-2" *ngIf="demandeEtudiant.length!==0">
+               <h1 class="mx-2">La liste des demande de l'etudiant</h1>
+               <div class="liste-demande">
+                    <div class="demande-class card mx-1 mb-1" *ngFor="let demande of demandeEtudiant">
+                         <h4 class="text-center">{{demande.objet}}</h4>
+                         <p class="text-center">{{demande.statutDemande}}</p>
+                         <p class="text-center">Date d'envoi <span>{{demande.dateDemande | date:'MM/d/yy'}}</span></p>
+                         <p class="text-center">Departement <span>{{demande.departement.nomDepartement}}</span></p>
+                    </div>
+               </div>
+          </div>
+    </div>
+</div>
+ 
+
+

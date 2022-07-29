@@ -1,5 +1,6 @@
 import { EtatCompte } from "../components/enums/etatCompte.enumm";
 import { NiveauEtude } from "../components/enums/niveauEtude.enumm";
+import { Demande } from "./demande.model";
 import { Filiere } from "./filiere.model";
 import { Profile } from "./profile.model";
 
@@ -18,4 +19,5 @@ export interface Etudiant{
     photo:string
     username:string;
     password:string;
+    demande:Demande[];
 }

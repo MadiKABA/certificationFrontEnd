@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { Demande } from 'src/app/models/demande.model';
 import { Etudiant } from 'src/app/models/etudiant.model';
 import { environment } from 'src/environments/environment';
 
@@ -58,11 +59,18 @@ export class EtudiantService {
   }
 
   /*la mehode pour recuperer un etudiant*/
-  public getOneEtudiant(id:number):Observable<number>{
-    return this.http.get<number>(this.host+"/"+id)
+  public getOneEtudiant(id:number):Observable<Etudiant>{
+    return this.http.get<Etudiant>(this.host+"/"+id)
       .pipe(
         catchError(this.handleError)
       )
+  }
+  /*La methode pour recuperer le detail d'un etudiant*/
+  public getDetailEtudiant(id:number):Observable<Demande[]>{
+    return this.http.get<Demande[]>(this.host+"/"+id+"/demandes")
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
 

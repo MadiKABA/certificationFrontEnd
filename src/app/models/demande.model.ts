@@ -7,7 +7,7 @@ export interface Demande{
     dateDemande:Date;
     statutDemande:string
     telephone:string;
-    departement:Departement[];
+    departement:Departement;
     contenu:string;
     etudiant:Etudiant
 }
