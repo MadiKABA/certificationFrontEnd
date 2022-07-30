@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DepartementService } from 'src/app/services/departementService/departement.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulaire-departement',
@@ -27,6 +28,7 @@ export class FormulaireDepartementComponent implements OnInit {
       {
         next:(data)=>{
           this.addDepartement.reset({})
+          Swal.fire('success','Deparetement ajouter','success');
 
         },
         error:(error)=>{

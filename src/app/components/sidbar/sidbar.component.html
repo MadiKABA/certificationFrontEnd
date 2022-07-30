@@ -1,8 +1,8 @@
 <div class="sidbar-style" [ngClass]="{'app-sideNav-open':sideNavStatus}">
     <ul class="nav-list mt-4"[ngClass]="{'nav-list-open':sideNavStatus}">
         <li class="nav-list-item">
-            <i class="bi bi-speedometer style-icone mx-3"></i>
-            <span><a>Accueil</a></span>
+            <i routerLink="/" class="bi bi-speedometer style-icone mx-3"></i>
+            <span><a routerLink="/">Accueil</a></span>
         </li>
         <li class="nav-list-item">
             <i routerLink="/listeUser" class="bi bi-people-fill style-icone mx-3"></i>

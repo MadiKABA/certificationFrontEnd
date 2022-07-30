@@ -16,8 +16,8 @@
                </div>
                <button routerLink="/liste-etudiants" class="mt-2">Retour</button>
           </div>
-          <h1 *ngIf="demandeEtudiant.length==0" class="mx-2">Aucune demande effectuer</h1>
-          <div class="container-demandes mx-2" *ngIf="demandeEtudiant.length!==0">
+          <h1 *ngIf="!demandeEtudiant" class="mx-2">Aucune demande effectuer</h1>
+          <div class="container-demandes mx-2" *ngIf="demandeEtudiant">
                <h1 class="mx-2">La liste des demande de l'etudiant</h1>
                <div class="liste-demande">
                     <div class="demande-class card mx-1 mb-1" *ngFor="let demande of demandeEtudiant">

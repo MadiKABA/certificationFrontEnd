@@ -1,0 +1,35 @@
+<h1 class="text-syle">Accueil</h1>
+<!-- <p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p> -->
+<div class="formulaire-container">
+    <div class="case-statistique-demande">
+        <div class="case-statistique">
+            <h3>Demandes en cours</h3>
+            <p>{{demandeEncours}}</p>
+        </div>
+        <div class="case-statistique">
+            <h3>Demandes désapprouvées</h3>
+            <p>{{demandeDesaprouver}}</p>
+        </div>
+        <div class="case-statistique">
+            <h3>Demande approuvées</h3>
+            <p>{{demandeApprouver}}</p>
+        </div>
+        <div class="case-statistique">
+            <h3>Demandes Totales</h3>
+            <p>{{demandeTotal}}</p>
+        </div>
+    </div>
+    <hr>
+    <div class="statistique-div my-2">
+        <div class="div-canneva-statistique">
+            <canvas id="chart1">
+        
+            </canvas>
+        </div>
+        <div class="div-canneva-statistique">
+            <canvas id="chart2">
+    
+            </canvas>
+        </div>
+    </div>
+</div>

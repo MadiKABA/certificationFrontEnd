@@ -23,6 +23,7 @@ import { ListeDemandeComponent } from './components/demande/liste-demande/liste-
 import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DetailDemandeComponent } from './components/demande/detail-demande/deta
     ListeDemandeComponent,
     UpdateDemandeComponent,
     DetailEtudiantComponent,
-    DetailDemandeComponent
+    DetailDemandeComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

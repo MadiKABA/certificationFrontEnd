@@ -15,8 +15,12 @@ import { ListeDemandeComponent } from './components/demande/liste-demande/liste-
 import { UpdateDemandeComponent } from './components/demande/update-demande/update-demande.component';
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
+  {path:"",component:HomePageComponent},
+
+
   {path:"addUser",component:FormulaireUserComponent},
   {path:"listeUser",component:ListeUserComponent},
   {path:"modifier-administrateur/:id",component:EditAdminComponent},
