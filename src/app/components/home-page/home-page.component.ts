@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DemandeServiceService } from 'src/app/services/demandeService/demande-service.service';
 import {Chart} from 'chart.js';
-import { tick } from '@angular/core/testing';
-
 
 @Component({
   selector: 'app-home-page',
@@ -39,9 +37,21 @@ export class HomePageComponent implements OnInit {
             datasets: [{
               label: 'Le nombre de demande',
               data: [this.demandeEncours,this.demandeDesaprouver,this.demandeApprouver],
-              backgroundColor: ["#0077F7","#ce0033","#E9E6E6"],
+              backgroundColor: ["#326799","#ce0033","#538954"],
             }]
           },
+          options: {
+            title: {
+              display: true,
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
         })
       },
       error:(error)=>{
@@ -63,9 +73,21 @@ export class HomePageComponent implements OnInit {
             datasets: [{
               label: 'Le nombre de demande',
               data: [this.demandeEncours,this.demandeDesaprouver,this.demandeApprouver],
-              backgroundColor: ["#0077F7","#ce0033","#E9E6E6"],
+              backgroundColor: ["#326799","#ce0033","#538954"],
             }]
           },
+          options: {
+            title: {
+              display: true,
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
         })
       },
       error:(error)=>{
