@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Demande } from 'src/app/models/demande.model';
 import { DemandeServiceService } from 'src/app/services/demandeService/demande-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detail-demande',
@@ -11,7 +12,11 @@ import { DemandeServiceService } from 'src/app/services/demandeService/demande-s
 export class DetailDemandeComponent implements OnInit {
   demande!:Demande;
   id!:number;
-  constructor(private serviceDemande:DemandeServiceService,private routerActiveted:ActivatedRoute) { }
+  constructor(
+    private serviceDemande:DemandeServiceService,
+    private routerActiveted:ActivatedRoute,
+    private routerRedirect:Router
+    ) { }
 
   ngOnInit(): void {
     this.id=this.routerActiveted.snapshot.params['id'];
@@ -35,7 +40,9 @@ export class DetailDemandeComponent implements OnInit {
     console.log('valider la demande',this.demande.id);
     this.serviceDemande.validatedDemande(this.demande).subscribe({
       next:(data)=>{
-        console.log('la demandes a ete valider est',data);
+        Swal.fire('Demande approuver');
+        console.log('le numero du demandeur est',data.telephone);
+        this.redirction();
       },
       error:(error)=>{
         console.log(error);
@@ -47,12 +54,19 @@ export class DetailDemandeComponent implements OnInit {
     console.log('valider la demande',this.demande.id);
     this.serviceDemande.rejeterDemande(this.demande).subscribe({
       next:(data)=>{
-        console.log('la demandes a ete rejeter est',data);
+        Swal.fire('Demande rejeter');
+        console.log('le numero du demandeur est',data.telephone);
+        this.redirction();
       },
       error:(error)=>{
         console.log(error);
       }
     })
+  }
+
+
+  redirction(){
+    this.routerRedirect.navigate(['/liste-demandes']);
   }
 
 }

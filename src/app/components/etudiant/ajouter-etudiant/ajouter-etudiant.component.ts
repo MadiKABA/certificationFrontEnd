@@ -5,6 +5,7 @@ import { Etudiant } from 'src/app/models/etudiant.model';
 import { Filiere } from 'src/app/models/filiere.model';
 import { EtudiantService } from 'src/app/services/etudiantService/etudiant-service.service';
 import { FiliereServiceService } from 'src/app/services/filiere/filiere-service.service';
+import Swal from 'sweetalert2';
 import { EtatCompte } from '../../enums/etatCompte.enumm';
 import { NiveauEtude } from '../../enums/niveauEtude.enumm';
 
@@ -66,7 +67,7 @@ export class AjouterEtudiantComponent implements OnInit {
       let etudiant=this.saveEtudiant.value;
       this.serviceEtudiant.saveEtudiant(etudiant).subscribe({
         next:(data)=>{
-          alert("Ajout effectuer avec success");
+          Swal.fire('Etudiant ajouter','Success');
           this.redirction();
         },
         error:(error)=>{
@@ -80,7 +81,7 @@ export class AjouterEtudiantComponent implements OnInit {
         next:(data)=>{
           console.log('modification de l\'etudiant',this.saveEtudiant.value); 
           console.log(data);
-          alert("Modification effectuer avec success");
+          Swal.fire('Etudiant modifier','Success');
           this.redirction();
         },
         error:(error)=>{

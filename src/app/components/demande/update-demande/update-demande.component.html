@@ -66,7 +66,7 @@
             <div class="div-champ-input">
                 <div class="input-demande">
                     <label class="titre-inpute" for="contenu">Le contenu de votre demande</label>
-                    <input type="text" formControlName="contenu" class="champ-input" id="contenu" maxlength="1000" required>
+                    <textarea formControlName="contenu" class="champ-input text-demande" id="contenu" maxlength="1000" required></textarea>
                     <span class="text-danger" 
                         *ngIf="saveDemande.controls['contenu'].touched
                         && saveDemande.controls['contenu'].errors

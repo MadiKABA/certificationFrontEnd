@@ -8,6 +8,8 @@ import { Profile } from 'src/app/models/profile.model';
 import { AdminService } from 'src/app/services/administrateurService/admin.service';
 import { DepartementService } from 'src/app/services/departementService/departement.service';
 import { ProfileService } from 'src/app/services/profileService/profile.service';
+import Swal from 'sweetalert2';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire-user',
@@ -26,7 +28,7 @@ export class FormulaireUserComponent implements OnInit {
               private departementService:DepartementService,
               private profileService:ProfileService,
               private fb:FormBuilder,
-              private datePipe:DatePipe
+              private routerRedirect:Router              
             ) { }
 
   ngOnInit(): void {
@@ -74,7 +76,8 @@ export class FormulaireUserComponent implements OnInit {
     this.serviceAdmin.saveAdmin(this.saveAdministrateur.value).subscribe({
       next:(data)=>{
         console.log(this.saveAdministrateur.value);
-        alert("Administrateur ajouter avec success")
+        Swal.fire('success','Utilisateur ajouter');
+        this.redirction();
         this.saveAdministrateur.reset({})
       },
       error:(error)=>{
@@ -85,6 +88,11 @@ export class FormulaireUserComponent implements OnInit {
   }
   get controleSaisie(){
     return this.saveAdministrateur.controls;
+  }
+
+
+  redirction(){
+    this.routerRedirect.navigate(['/liste-etudiants']);
   }
 
 }
