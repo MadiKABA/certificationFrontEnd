@@ -67,7 +67,7 @@ export class AjouterEtudiantComponent implements OnInit {
       let etudiant=this.saveEtudiant.value;
       this.serviceEtudiant.saveEtudiant(etudiant).subscribe({
         next:(data)=>{
-          Swal.fire('Etudiant ajouter','Success');
+          Swal.fire('success','Etudiant ajouter','success');
           this.redirction();
         },
         error:(error)=>{
@@ -81,7 +81,7 @@ export class AjouterEtudiantComponent implements OnInit {
         next:(data)=>{
           console.log('modification de l\'etudiant',this.saveEtudiant.value); 
           console.log(data);
-          Swal.fire('Etudiant modifier','Success');
+          Swal.fire('success','Etudiant modifier','success');
           this.redirction();
         },
         error:(error)=>{

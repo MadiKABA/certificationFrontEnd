@@ -1,7 +1,7 @@
 <div class="formulaire-container">
     <div class="container-detail-and-demande-etudiant">
           <div class="container-detail mb-2" *ngIf="etudiant">
-               <h1>Le detail de l'etudiant</h1>
+               <h1 class="">Le detail de l'etudiant</h1>
                <div class="card">
                     <div class="cadre-image-et-contenu">
                          <img src="../../../../assets/imagejabbar.jpeg" class="img-fluid style-image">
@@ -16,7 +16,7 @@
                </div>
                <button routerLink="/liste-etudiants" class="mt-2">Retour</button>
           </div>
-          <h1 *ngIf="!demandeEtudiant" class="mx-2">Aucune demande effectuer</h1>
+          <h1 *ngIf="!demandeEtudiant" class="mx-2 text-syle">Aucune demande effectuer</h1>
           <div class="container-demandes mx-2" *ngIf="demandeEtudiant">
                <h1 class="mx-2">La liste des demande de l'etudiant</h1>
                <div class="liste-demande">

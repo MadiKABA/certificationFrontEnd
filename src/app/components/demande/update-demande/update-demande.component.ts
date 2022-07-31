@@ -51,7 +51,7 @@ export class UpdateDemandeComponent implements OnInit {
       "filiereDTO": {
       },
 
-      "id": 1
+      "id": 2
     },
     departement:['',[Validators.required]],
   })
@@ -83,10 +83,10 @@ export class UpdateDemandeComponent implements OnInit {
       this.demandeService.saveDemande(demande).subscribe({
         next:(data)=>{
           this.saveDemande.reset({})
-          Swal.fire('Demande envoyer');
+          Swal.fire('success','Demande envoyer','success');
         },
         error:(error)=>{
-          Swal.fire('Demande non envoyer',error);
+          Swal.fire('error','Demande non envoyer','error');
         }
       })
     }

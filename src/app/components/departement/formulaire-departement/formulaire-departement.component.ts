@@ -29,7 +29,7 @@ export class FormulaireDepartementComponent implements OnInit {
         next:(data)=>{
           this.addDepartement.reset({})
           Swal.fire('success','Deparetement ajouter','success');
-
+          
         },
         error:(error)=>{
           this.errorMessage=error;
