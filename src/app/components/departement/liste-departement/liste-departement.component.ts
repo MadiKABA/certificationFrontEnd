@@ -21,7 +21,6 @@ export class ListeDepartementComponent implements OnInit {
       next:(data)=>{
         this.departements=data
         console.log(data);
-
       },
       error:(error)=>{
         console.log(error);

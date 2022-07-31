@@ -45,6 +45,13 @@ export class DemandeServiceService {
     )
   }
 
+  /*La methode qui permet de envoyer une demande*/
+  public saveDemande(demande:Demande):Observable<Demande>{
+    return this.http.post<Demande>(this.host,demande).pipe(
+      catchError(this.handleError)
+    )
+  }
+
 
 
 //la gestion des erreur.

@@ -139,6 +139,12 @@ button{
     .btn-search-admin{
         margin-right: 0px;
     }
+    .card-demandes{
+        flex-direction: column;
+    }
+    .cadre-image-et-contenu{
+        width: 100%;
+    }
 
 }
 /* Media quer tablette */

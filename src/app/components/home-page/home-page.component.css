@@ -80,17 +80,18 @@
     justify-content: center;
     align-items: center;
     margin: 1%;
+    color: #326799;
 
 }
-.approuver{
+/* .approuver{
     border: 2px solid #538954;
 }
 .desaprouver{
-    border: 2px solid #ce0033;
-}
-.encours{
+    border: 2px solid #EA3D68;
+} */
+/* .encours{
     border: 2px solid #326799;
-}
+} */
 
 .statistique-div{
     display: flex;
@@ -119,6 +120,18 @@
     }
     .btn-search-admin{
         margin-right: 0px;
+    }
+    .case-statistique-demande{
+        flex-direction: column;
+    }
+    .case-statistique{
+        width: 98%;
+    }
+    .statistique-div{
+        flex-direction: column;
+    }
+    .div-canneva-statistique{
+        width: 100%;
     }
 
 }

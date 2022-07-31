@@ -1,20 +1,20 @@
 <h1 class="text-syle">La liste des Demandes</h1>
-<!-- <p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p> -->
-<!-- <p *ngIf="!demandes" class="text-info text-center">Aucune demande effectuer</p> -->
+<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+<p *ngIf="!demandes" class="text-info text-center">Aucune demande effectuer</p>
 <div class="formulaire-container">
     <div class="button-add-input-search my-4 mx-3">
         <button class="button-add-user">
-            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajouter-etudiant"></i>
-            <span class="titre-btn-add-user" routerLink="/ajouter-etudiant">Ajouter une demande</span>
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajouter-demande"></i>
+            <span class="titre-btn-add-user" routerLink="/ajouter-demande">Ajouter une demande</span>
         </button>
         <div>
-          <!-- <form [formGroup]="rechercheAdmin" (ngSubmit)="handleAdmin()">
-            {{this.rechercheAdmin.value | json}}
-            <input type="text" formControlName="motCle" class="input-search-admin" placeholder="Rechercher un utilisateur" maxlength="30">
+          <form >
+            <!-- {{this.rechercheAdmin.value | json}} -->
+            <input type="text" formControlName="motCle" class="input-search-admin" placeholder="filtrer par status ex: Approuver" maxlength="30">
             <button class="btn-search-admin">
                 <i class="bi bi-search"></i>
             </button>
-          </form> -->
+          </form>
         </div>
     </div>
     <hr>
@@ -28,6 +28,7 @@
                     <p>Par: {{demande.etudiant.prenoms+ " " +demande.etudiant.nom}}</p>
                     <p>Statut: {{demande.statutDemande}}</p>
                     <button routerLink="/detail-demande/{{demande.id}}" *ngIf="demande.statutDemande==='EnCours'">Detail</button>
+                    <!-- <button routerLink="/modifier-demande/{{demande.id}}" *ngIf="demande.statutDemande==='EnCours'">edit</button> -->
                     <button class="delete-btn" (click)="delete(demande.id)" *ngIf="demande.statutDemande==='Approuver'|| demande.statutDemande==='Desaprouver'">Suppimer</button>
                 </div>
             </div>

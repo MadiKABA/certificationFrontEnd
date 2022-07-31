@@ -29,7 +29,6 @@ export class HomePageComponent implements OnInit {
         this.demandeEncours=data.filter(value=>value.statutDemande==='EnCours').length;
         this.demandeDesaprouver=data.filter(value=>value.statutDemande==='Desaprouver').length;
         this.demandeApprouver=data.filter(value=>value.statutDemande==='Approuver').length;
-        this.demandeTotal=data.length;
         this.statistique=new Chart('chart1',{
           type:'pie',
           data:{
@@ -37,7 +36,7 @@ export class HomePageComponent implements OnInit {
             datasets: [{
               label: 'Le nombre de demande',
               data: [this.demandeEncours,this.demandeDesaprouver,this.demandeApprouver],
-              backgroundColor: ["#326799","#ce0033","#538954"],
+              backgroundColor: ["#326799","#EA3D68","#538954"],
             }]
           },
           options: {
@@ -66,15 +65,17 @@ export class HomePageComponent implements OnInit {
         this.demandeEncours=data.filter(value=>value.statutDemande==='EnCours').length;
         this.demandeDesaprouver=data.filter(value=>value.statutDemande==='Desaprouver').length;
         this.demandeApprouver=data.filter(value=>value.statutDemande==='Approuver').length;
+        this.demandeTotal=data.length;
         this.statistique=new Chart('chart2',{
           type:'bar',
           data:{
-            labels: ["Demande en cours", "Demande desaprouver",'Demande approuver'],
+            labels: ["Demande en cours", "Demande desaprouver",'Demande approuver',"Nombre de demande totale"],
             datasets: [{
-              label: 'Le nombre de demande',
-              data: [this.demandeEncours,this.demandeDesaprouver,this.demandeApprouver],
-              backgroundColor: ["#326799","#ce0033","#538954"],
-            }]
+              label: '',
+              data: [this.demandeEncours,this.demandeDesaprouver,this.demandeApprouver,this.demandeTotal],
+              backgroundColor: ["#326799","#EA3D68","#538954","#53A3EB"],
+            },
+          ]
           },
           options: {
             title: {

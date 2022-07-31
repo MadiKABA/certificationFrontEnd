@@ -10,6 +10,7 @@ import { DemandeServiceService } from 'src/app/services/demandeService/demande-s
 export class ListeDemandeComponent implements OnInit {
   demandes!:Demande[];
   id!:number;
+  messageError!:string
 
   constructor(
     private serviceDemande:DemandeServiceService

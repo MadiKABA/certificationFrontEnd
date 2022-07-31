@@ -1,1 +1,89 @@
-<p>update-demande works!</p>
+<div class="formulaire-container">
+    <h1 *ngIf="!demande" class="text-center text-syle">Ecrivez votre demande</h1>
+    <h1 *ngIf="demande" class="text-center text-syle">Modifier votre demande</h1>
+       <!-- {{this.saveDemande.value | json}} -->
+    <div *ngIf="errorMessage">
+        <p class="text-center text-danger">{{errorMessage}}</p>
+    </div>
+    <div class="fom-container">
+        <form [formGroup]="saveDemande" (ngSubmit)="save()">
+            <div class="div-champ-input">
+                <div class="input-demande">
+                    <label class="titre-inpute" for="objet">Objet de votre demande</label>
+                    <input type="text" formControlName="objet" class="champ-input" id="objet" maxlength="200" required>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['objet'].touched
+                        && saveDemande.controls['objet'].errors
+                        && saveDemande.controls['objet'].errors['required']">
+                        Le objet de la demande est obligatoire
+                    </span>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['objet'].touched
+                        && saveDemande.controls['objet'].errors
+                        && saveDemande.controls['objet'].errors['minlength']">
+                        Le nom doit avoir au minumum 2 caracteres
+                    </span>
+                </div>
+            </div>
+            <div class="div-champ-input">
+                <div class="test">
+                    <label class="titre-inpute" for="departementDTO">Votre demande est destiner pour quel departement ?</label>
+                    <select class="champ-input" formControlName="departement" id="departementDTO" required>
+                        <option>Selection le departement</option>
+                        <option *ngIf="demande" [hidden]="true" [ngValue]="demande" [selected]="demande">{{demande.departement.nomDepartement}}</option>
+                        <option *ngFor="let departement of departements" [ngValue]="departement">{{departement.nomDepartement}}</option>
+                    </select>
+                    <span class="text-danger" 
+                      *ngIf="saveDemande.controls['departement'].touched
+                      && saveDemande.controls['departement'].errors
+                      && saveDemande.controls['departement'].errors['required']">
+                      Le departement est obligatoire
+                    </span>
+                  </div>
+                <div class="test">
+                    <label class="titre-inpute" for="prenom">Votre numero de telephone</label>
+                    <input type="text" formControlName="telephone" class="champ-input" id="prenom" required maxlength="12">
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['telephone'].touched
+                        && saveDemande.controls['telephone'].errors
+                        && saveDemande.controls['telephone'].errors['required']">
+                        Le numero de telephone est obligatoire
+                    </span>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['telephone'].touched
+                        && saveDemande.controls['telephone'].errors
+                        && saveDemande.controls['telephone'].errors['minlength']">
+                        Le telephone doit avoir au minumum 9 chiffres
+                    </span>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['telephone'].touched
+                        && saveDemande.controls['telephone'].errors
+                        && saveDemande.controls['telephone'].errors['pattern']">
+                        Le numero de telephone est invalide
+                    </span>
+                </div>
+            </div>
+            <div class="div-champ-input">
+                <div class="input-demande">
+                    <label class="titre-inpute" for="contenu">Le contenu de votre demande</label>
+                    <input type="text" formControlName="contenu" class="champ-input" id="contenu" maxlength="1000" required>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['contenu'].touched
+                        && saveDemande.controls['contenu'].errors
+                        && saveDemande.controls['contenu'].errors['required']">
+                        Le contenu de l'etudiant est obligatoire
+                    </span>
+                    <span class="text-danger" 
+                        *ngIf="saveDemande.controls['contenu'].touched
+                        && saveDemande.controls['contenu'].errors
+                        && saveDemande.controls['contenu'].errors['minlength']">
+                        Le contenu doit avoir au minumum 2 caracteres
+                    </span>
+                </div>
+            </div>
+            <div class="style-btn-envoyer my-2">
+                <button [disabled]="saveDemande.invalid" class="save-btn">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -108,7 +108,7 @@ export class AjouterEtudiantComponent implements OnInit {
           dateNaissance:(data['dateNaissance']),
           email:(data['email']),
           telephone:(data['telephone']),
-          matricule:(data['matricule']),
+          matricule:(data['matricule']),  
           profileDTO:({id:1}),
           etatCompte:(this.data.etatCompte==='ACTIVE'?EtatCompte.acive:EtatCompte.desactive),
           filiereDTO:({id:data.filiereDTO.id,'libelle':data.filiereDTO.libelle}),
