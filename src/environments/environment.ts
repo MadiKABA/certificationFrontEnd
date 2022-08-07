@@ -9,7 +9,8 @@ export const environment = {
   hostDepartement:"http://localhost:8080/departements",
   hostEtudiant:"http://localhost:8080/etudiants",
   hostFiliere:"http://localhost:8080/filieres",
-  hostDemande:"http://localhost:8080/demandes"
+  hostDemande:"http://localhost:8080/demandes",
+  generateLogin:"http://localhost:8080/generate-token",
 };
 
 /*

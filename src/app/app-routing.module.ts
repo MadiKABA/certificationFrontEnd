@@ -16,6 +16,7 @@ import { UpdateDemandeComponent } from './components/demande/update-demande/upda
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { LoginComponent } from './components/authentification/login/login.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -42,7 +43,10 @@ const routes: Routes = [
   {path:"liste-demandes",component:ListeDemandeComponent},
   {path:"ajouter-demande",component:UpdateDemandeComponent},
   {path:"modifier-demande/:id",component:UpdateDemandeComponent},
-  {path:"detail-demande/:id",component:DetailDemandeComponent}
+  {path:"detail-demande/:id",component:DetailDemandeComponent},
+
+
+  {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

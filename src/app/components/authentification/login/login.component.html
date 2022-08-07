@@ -1,0 +1,28 @@
+
+<div class="container mt-3">
+    {{loginData|json}}
+    <div class="card">
+        <div class="card-head">
+            <h2 class="text-center text-info mt-2">Authentification</h2>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="formSubmit()">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nom d'utilisateur</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1"
+                    [(ngModel)]="loginData.username" 
+                    name="username"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1"
+                    [(ngModel)]="loginData.password" 
+                    name="password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>

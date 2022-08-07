@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ListeUserComponent } from './components/administrateur/liste-user/liste-user.component';
 import { ProfileListeComponent } from './components/profile/profile-liste/profile-liste.component';
 import { FormulaireProfileComponent } from './components/profile/formulaire-profile/formulaire-profile.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProfileComponent } from './components/profile/edit-profile/edit-profile.component';
 import { ListeDepartementComponent } from './components/departement/liste-departement/liste-departement.component';
 import { FormulaireDepartementComponent } from './components/departement/formulaire-departement/formulaire-departement.component';
@@ -24,6 +24,7 @@ import { UpdateDemandeComponent } from './components/demande/update-demande/upda
 import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/detail-etudiant.component';
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { LoginComponent } from './components/authentification/login/login.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +48,14 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     DetailEtudiantComponent,
     DetailDemandeComponent,
     HomePageComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
