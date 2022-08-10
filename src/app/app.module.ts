@@ -25,6 +25,7 @@ import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/d
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/authentification/login/login.component';
+import { authInterceptorProviders } from './services/authentification/authentification.interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { LoginComponent } from './components/authentification/login/login.compon
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

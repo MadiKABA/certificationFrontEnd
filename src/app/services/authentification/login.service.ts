@@ -16,10 +16,17 @@ export class LoginService {
 
   /*genration du token*/
   public generateToken(login:Login):Observable<Login>{
-    return this.http.post<Login>(this.host,login)
+    return this.http.post<Login>(this.host+"/generate-token",login)
       .pipe(
         catchError(this.handleError)
       )
+  }
+
+  /*get current user*/
+  public getCurrentUser():Observable<any>{
+    return this.http.get<any>(this.host+"/current-user").pipe(
+      catchError(this.handleError)
+    )
   }
 
   /*lgin user: set token in localstorage*/
@@ -30,7 +37,7 @@ export class LoginService {
   /*is login: user is logged in or not*/
   public isLoggedIn(){
     let tokenStr=localStorage.getItem("token");
-    if(tokenStr==undefined|| tokenStr==''||tokenStr==null){
+    if(tokenStr==undefined || tokenStr=='' || tokenStr==null){
       return false;
     }else{
       return true;
@@ -40,6 +47,7 @@ export class LoginService {
   /*logout remove token form localstorage*/
   public logout(){
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     return true;
   }
 
@@ -49,21 +57,14 @@ export class LoginService {
   }
 
   /*get user detail*/
-  public setAdminDetail(administrateur:Administrateur){
-    localStorage.setItem('administrateur',JSON.stringify(administrateur));
-  }
-
-  public setEtudiantDetail(etudiant:Etudiant){
-    localStorage.setItem('etudiant',JSON.stringify(etudiant));
+  public setUser(user:any){
+    localStorage.setItem('user detail',JSON.stringify(user))
   }
   /*getUser*/
   getUser(){
-    let etudiantStr=localStorage.getItem('etudiant');
-    let administrateurStr=localStorage.getItem('administrateur');
-    if(etudiantStr!=null){
-      return JSON.parse(etudiantStr);
-    }else if(administrateurStr!=null){
-      return JSON.parse(administrateurStr);
+    let userStr=localStorage.getItem('user');
+    if(userStr!=null){
+      return JSON.parse(userStr);
     }else{
       this.logout();
       return null;
@@ -72,8 +73,8 @@ export class LoginService {
 
   /*getUser role*/
   public getUserRole(){
-    let user=this.getUser();
-    return user.profile.libelle;
+    console.log('le role de user',this.getUser());
+    return null;
   }
 
 

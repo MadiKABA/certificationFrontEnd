@@ -17,6 +17,8 @@ import { DetailEtudiantComponent } from './components/etudiant/detail-etudiant/d
 import { DetailDemandeComponent } from './components/demande/detail-demande/detail-demande.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/authentification/login/login.component';
+import { AdministrationGuard } from './services/guard/administration.guard';
+import { EtudiantGuard } from './services/guard/etudiant.guard';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -31,7 +33,7 @@ const routes: Routes = [
   {path:"modifier-etudiant/:id",component:AjouterEtudiantComponent},
   {path:"detail-etudiant/:id",component:DetailEtudiantComponent},
 
-  {path:"liste-profiles",component:ProfileListeComponent},
+  {path:"liste-profiles",component:ProfileListeComponent, canActivate:[AdministrationGuard]},
   {path:"ajoute-profile",component:FormulaireProfileComponent},
   {path:"modifife-profile/:id",component:EditProfileComponent},
 
@@ -41,12 +43,15 @@ const routes: Routes = [
   {path:"modifife-departement/:id",component:EditDepartementComponent},
 
   {path:"liste-demandes",component:ListeDemandeComponent},
-  {path:"ajouter-demande",component:UpdateDemandeComponent},
+  {path:"ajouter-demande",component:UpdateDemandeComponent,canActivate:[EtudiantGuard]},
   {path:"modifier-demande/:id",component:UpdateDemandeComponent},
   {path:"detail-demande/:id",component:DetailDemandeComponent},
 
 
-  {path:"login",component:LoginComponent}
+  {
+    path:"login",
+    component:LoginComponent
+  }
 ];
 
 @NgModule({
