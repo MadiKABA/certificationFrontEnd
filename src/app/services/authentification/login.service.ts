@@ -15,8 +15,8 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   /*genration du token*/
-  public generateToken(login:Login):Observable<Login>{
-    return this.http.post<Login>(this.host+"/generate-token",login)
+  public generateToken(login:any):Observable<Login>{
+    return this.http.post<any>(this.host+"/generate-token",login)
       .pipe(
         catchError(this.handleError)
       )
@@ -58,7 +58,7 @@ export class LoginService {
 
   /*get user detail*/
   public setUser(user:any){
-    localStorage.setItem('user detail',JSON.stringify(user))
+    localStorage.setItem('user',JSON.stringify(user))
   }
   /*getUser*/
   getUser(){
@@ -73,8 +73,9 @@ export class LoginService {
 
   /*getUser role*/
   public getUserRole(){
-    console.log('le role de user',this.getUser());
-    return null;
+    let user=this.getUser();
+    console.log('le role de user',user.authorities[0].authority);
+    return user.authorities[0].authority;
   }
 
 

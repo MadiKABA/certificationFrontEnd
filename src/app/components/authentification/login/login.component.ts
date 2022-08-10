@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit(){
-    console.log("button de connexion" ,this.loginData);
+    //console.log("button de connexion" ,this.loginData);
     this.loginService.generateToken(this.loginData).subscribe({
       next:(data:any)=>{
         console.log('le token',data);
@@ -32,14 +32,16 @@ export class LoginComponent implements OnInit {
           next:(user:any)=>{
             console.log('user connected',user);
             this.loginService.setUser(user)
-            if(this.loginService.getUserRole()==='Etudiant'){
-              console.log("vous etes Etudiants");
+            if(this.loginService.getUserRole()=='Etudiant'){
+              console.log("vous etes Etudiants",user);
               /*Redirection Etudiant*/
+              //window.location.href ='ajouter-demande';
               this.routerRedirect.navigate(['ajouter-demande']);
-            }else if(user.profile.libelle==='Admin'){
+            }else if(this.loginService.getUserRole()=='Admin'){
               console.log('vous etes Administrateur');
               /*Redirection Administrateur*/
-              this.routerRedirect.navigate(['listeUser']);
+              //window.location.href ='';
+              this.routerRedirect.navigate(['']);
             }else{
               this.loginService.logout();
               // console.log('vous etes Secretaire');
