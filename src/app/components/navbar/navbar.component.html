@@ -6,12 +6,13 @@
         </div>
     </div>
     <div class="section-profile-user btn" data-bs-toggle="dropdown">
-        <i class="bi bi-person-circle" (click)="deconnexion()"></i>
+        <i class="bi bi-person-circle"></i>
     </div>
     <ul class="dropdown-menu">
-        <li class="text-center px-1">Abdoul karim DIALLO</li>
+        <!-- <li class="text-center px-1"[hidden]="!loginService.isLoggedIn()">{{loginService.getUser().prenoms+" "+loginService.getUser().nom}}</li> -->
         <li routerLink="/" class="reglage-style"><i class="bi bi-gear-fill"></i></li>
         <li class="reglage-style"><i class="bi bi-box-arrow-right btn" routerLink="/login"></i></li>
+        <li class="btn" (click)="deconnexion()">Logout</li>
     </ul>
 </nav>
 

@@ -74,7 +74,8 @@ export class LoginService {
   /*getUser role*/
   public getUserRole(){
     let user=this.getUser();
-    console.log('le role de user',user.authorities[0].authority);
+    // console.log('le role de user est par authority {}:',user.authorities[0].authority);
+    // console.log('le role de user est par profile {}:',user.profile.libelle);
     return user.authorities[0].authority;
   }
 

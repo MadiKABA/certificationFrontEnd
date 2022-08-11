@@ -7,7 +7,6 @@ import { EtudiantService } from 'src/app/services/etudiantService/etudiant-servi
 import { FiliereServiceService } from 'src/app/services/filiere/filiere-service.service';
 import Swal from 'sweetalert2';
 import { EtatCompte } from '../../enums/etatCompte.enumm';
-import { NiveauEtude } from '../../enums/niveauEtude.enumm';
 
 @Component({
   selector: 'app-ajouter-etudiant',
@@ -52,7 +51,7 @@ export class AjouterEtudiantComponent implements OnInit {
     email:this.fb.control(null,[Validators.required,Validators.email]),
     telephone:this.fb.control(null,[Validators.required,Validators.minLength(9),Validators.pattern("[0-9]+")]),
     matricule:this.fb.control(null,[Validators.required,Validators.minLength(5)]),
-    profileDTO:this.fb.control({id:1}),
+    profileDTO:this.fb.control({id:2}),
     etatCompte:this.fb.control(EtatCompte.acive),
     filiereDTO:this.fb.control(null,[Validators.required]),
     niveauEtude:this.fb.control(null,[Validators.required]),
@@ -110,7 +109,7 @@ export class AjouterEtudiantComponent implements OnInit {
           email:(data['email']),
           telephone:(data['telephone']),
           matricule:(data['matricule']),  
-          profileDTO:({id:1}),
+          profileDTO:({id:2}),
           etatCompte:(this.data.etatCompte==='ACTIVE'?EtatCompte.acive:EtatCompte.desactive),
           filiereDTO:({id:data.filiereDTO.id,'libelle':data.filiereDTO.libelle}),
           niveauEtude:(data['niveauEtude']),
