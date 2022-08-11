@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/authentification/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,13 +12,19 @@ export class NavbarComponent implements OnInit {
   @Output() sideNavToggled=new EventEmitter<boolean>();
   menuStatus:boolean= false;
 
-  constructor() { }
+  constructor(public loginService:LoginService,private routerRedirect:Router) { }
 
   ngOnInit(): void {
+    
   }
   navbarTogle(){
     this.menuStatus=!this.menuStatus
     this.sideNavToggled.emit(this.menuStatus);
+  }
+
+  deconnexion(){
+    this.loginService.logout();
+    this.routerRedirect.navigate(['/login']);
   }
 
 }

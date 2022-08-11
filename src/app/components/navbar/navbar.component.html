@@ -1,4 +1,4 @@
-<nav class="navbar-style">
+<nav class="navbar-style" *ngIf="loginService.isLoggedIn()">
     <div class="log-and-togle-div">
         <!-- <img src="../../../assets/udblogo.jpeg" class="logo" alt="logo udb"> -->
         <div class="section-togle btn" (click)="navbarTogle()">
@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="section-profile-user btn" data-bs-toggle="dropdown">
-        <i class="bi bi-person-circle"></i>
+        <i class="bi bi-person-circle" (click)="deconnexion()"></i>
     </div>
     <ul class="dropdown-menu">
         <li class="text-center px-1">Abdoul karim DIALLO</li>

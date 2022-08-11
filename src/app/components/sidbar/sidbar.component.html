@@ -1,4 +1,4 @@
-<div class="sidbar-style" [ngClass]="{'app-sideNav-open':sideNavStatus}">
+<div *ngIf="loginService.isLoggedIn()" class="sidbar-style" [ngClass]="{'app-sideNav-open':sideNavStatus}">
     <ul class="nav-list mt-4"[ngClass]="{'nav-list-open':sideNavStatus}">
         <li class="nav-list-item">
             <i routerLink="/" class="bi bi-speedometer style-icone mx-3"></i>
@@ -37,3 +37,4 @@
     <!-- Affichage du footer  -->
     <!-- <app-footer></app-footer> -->
 </div>
+

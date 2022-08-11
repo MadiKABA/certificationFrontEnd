@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { LoginService } from 'src/app/services/authentification/login.service';
 
 @Component({
   selector: 'app-sidbar',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 export class SidbarComponent implements OnInit {
   @Input() sideNavStatus:boolean=false
 
-  constructor() { }
+  constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
   }

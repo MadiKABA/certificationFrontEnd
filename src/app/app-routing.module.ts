@@ -21,31 +21,31 @@ import { AdministrationGuard } from './services/guard/administration.guard';
 import { EtudiantGuard } from './services/guard/etudiant.guard';
 
 const routes: Routes = [
-  {path:"",component:HomePageComponent},
+  {path:"",component:HomePageComponent, canActivate:[AdministrationGuard]},
 
 
-  {path:"addUser",component:FormulaireUserComponent},
-  {path:"listeUser",component:ListeUserComponent},
-  {path:"modifier-administrateur/:id",component:EditAdminComponent},
+  {path:"addUser",component:FormulaireUserComponent, canActivate:[AdministrationGuard]},
+  {path:"listeUser",component:ListeUserComponent, canActivate:[AdministrationGuard]},
+  {path:"modifier-administrateur/:id",component:EditAdminComponent, canActivate:[AdministrationGuard]},
 
-  {path:"liste-etudiants",component:ListeEtudiantComponent},
-  {path:"ajouter-etudiant",component:AjouterEtudiantComponent},
-  {path:"modifier-etudiant/:id",component:AjouterEtudiantComponent},
-  {path:"detail-etudiant/:id",component:DetailEtudiantComponent},
+  {path:"liste-etudiants",component:ListeEtudiantComponent, canActivate:[AdministrationGuard]},
+  {path:"ajouter-etudiant",component:AjouterEtudiantComponent, canActivate:[AdministrationGuard]},
+  {path:"modifier-etudiant/:id",component:AjouterEtudiantComponent, canActivate:[AdministrationGuard]},
+  {path:"detail-etudiant/:id",component:DetailEtudiantComponent, canActivate:[AdministrationGuard]},
 
   {path:"liste-profiles",component:ProfileListeComponent, canActivate:[AdministrationGuard]},
-  {path:"ajoute-profile",component:FormulaireProfileComponent},
-  {path:"modifife-profile/:id",component:EditProfileComponent},
+  {path:"ajoute-profile",component:FormulaireProfileComponent, canActivate:[AdministrationGuard]},
+  {path:"modifife-profile/:id",component:EditProfileComponent, canActivate:[AdministrationGuard]},
 
 
-  {path:"liste-departement",component:ListeDepartementComponent},
-  {path:"ajout-departement",component:FormulaireDepartementComponent},
-  {path:"modifife-departement/:id",component:EditDepartementComponent},
+  {path:"liste-departement",component:ListeDepartementComponent, canActivate:[AdministrationGuard]},
+  {path:"ajout-departement",component:FormulaireDepartementComponent, canActivate:[AdministrationGuard]},
+  {path:"modifife-departement/:id",component:EditDepartementComponent, canActivate:[AdministrationGuard]},
 
-  {path:"liste-demandes",component:ListeDemandeComponent},
+  {path:"liste-demandes",component:ListeDemandeComponent, canActivate:[AdministrationGuard]},
   {path:"ajouter-demande",component:UpdateDemandeComponent,canActivate:[EtudiantGuard]},
-  {path:"modifier-demande/:id",component:UpdateDemandeComponent},
-  {path:"detail-demande/:id",component:DetailDemandeComponent},
+  {path:"modifier-demande/:id",component:UpdateDemandeComponent, canActivate:[AdministrationGuard]},
+  {path:"detail-demande/:id",component:DetailDemandeComponent, canActivate:[AdministrationGuard]},
 
 
   {

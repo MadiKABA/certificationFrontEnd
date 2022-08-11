@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login.model';
 import { LoginService } from 'src/app/services/authentification/login.service';
@@ -9,20 +10,22 @@ import { LoginService } from 'src/app/services/authentification/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  message:string='';
   login!:Login
-  loginData={
-    username:'',
-    password:''
-  }
 
-  constructor(private loginService:LoginService,private routerRedirect:Router) { }
+  constructor(private loginService:LoginService,private routerRedirect:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  loggedUser=this.fb.group({
+    username:['',[Validators.required,Validators.minLength(3)]],
+    password:['',[Validators.required,Validators.minLength(3)]]
+  })
+
   formSubmit(){
-    //console.log("button de connexion" ,this.loginData);
-    this.loginService.generateToken(this.loginData).subscribe({
+    let userLoged=this.loggedUser.value;
+    this.loginService.generateToken(userLoged).subscribe({
       next:(data:any)=>{
         console.log('le token',data);
         /*Le login*/
@@ -35,25 +38,24 @@ export class LoginComponent implements OnInit {
             if(this.loginService.getUserRole()=='Etudiant'){
               console.log("vous etes Etudiants",user);
               /*Redirection Etudiant*/
-              //window.location.href ='ajouter-demande';
               this.routerRedirect.navigate(['ajouter-demande']);
             }else if(this.loginService.getUserRole()=='Admin'){
               console.log('vous etes Administrateur');
               /*Redirection Administrateur*/
-              //window.location.href ='';
               this.routerRedirect.navigate(['']);
             }else{
               this.loginService.logout();
-              // console.log('vous etes Secretaire');
             }
           },
           error:(error)=>{
-            console.log('error pour la recuperation du current user',error);           
+            console.log('error pour la recuperation du current user',error);       
           }
         })
       },
       error:(error)=>{
         console.log('error du generation du token',error);
+        this.message=error;
+        this.loggedUser.reset({});
       }
     })
   }

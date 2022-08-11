@@ -6,6 +6,7 @@ import { Departement } from 'src/app/models/departement.model';
 import { Etudiant } from 'src/app/models/etudiant.model';
 import { Filiere } from 'src/app/models/filiere.model';
 import { Profile } from 'src/app/models/profile.model';
+import { LoginService } from 'src/app/services/authentification/login.service';
 import { DemandeServiceService } from 'src/app/services/demandeService/demande-service.service';
 import { DepartementService } from 'src/app/services/departementService/departement.service';
 import Swal from 'sweetalert2';
@@ -29,12 +30,20 @@ export class UpdateDemandeComponent implements OnInit {
     private departementService:DepartementService,
     private demandeService:DemandeServiceService,
     private fb:FormBuilder,
-    private routerActivted:ActivatedRoute
+    private routerActivted:ActivatedRoute,
+    private loginService:LoginService
   ) { }
 
   ngOnInit(): void {
     this.getAllDepartement();
-    this.updateDemande();
+    //this.updateDemande();
+    this.loginService.getCurrentUser().subscribe({
+      next:(data)=>{
+        console.log('user connecter est:',data);  
+        this.etudiant=data  
+        return this.etudiant; 
+      }
+    })
   }
   // saveDemande!:FormGroup;
   saveDemande=this.fb.group({
@@ -51,7 +60,7 @@ export class UpdateDemandeComponent implements OnInit {
       "filiereDTO": {
       },
 
-      "id": 2
+      "id": 5
     },
     departement:['',[Validators.required]],
   })
@@ -61,7 +70,7 @@ export class UpdateDemandeComponent implements OnInit {
     this.departementService.getAllDepartement().subscribe({
       next:(data)=>{
         this.departements=data
-        console.log(data);
+        //console.log(data);
       },
       error:(error)=>{
         console.log(error);
