@@ -12,14 +12,14 @@ export class NavbarComponent implements OnInit {
   //Pour gerer le togle de navbar
   @Output() sideNavToggled=new EventEmitter<boolean>();
   menuStatus:boolean= false;
-  //isLoggedIn=false;
-  user:null|undefined;
+  isLoggedIn:any;
+  // user:any;
 
   constructor(public loginService:LoginService,private routerRedirect:Router) { }
 
   ngOnInit(): void {
-    //this.isLoggedIn=this.loginService.isLoggedIn();
-    this.user=this.loginService.getUser();
+    this.isLoggedIn=this.loginService.isLoggedIn();
+    this.loginService.getUser();
     
   }
   navbarTogle(){
@@ -29,8 +29,7 @@ export class NavbarComponent implements OnInit {
 
   deconnexion(){
     this.loginService.logout();
-    this.user=null;
-    //this.isLoggedIn=false;
+    // this.user=null
     this.routerRedirect.navigate(['/login']);
   }
 

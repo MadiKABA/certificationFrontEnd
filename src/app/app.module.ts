@@ -26,6 +26,9 @@ import { DetailDemandeComponent } from './components/demande/detail-demande/deta
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/authentification/login/login.component';
 import { authInterceptorProviders } from './services/authentification/authentification.interceptor';
+import { PublicPageComponent } from './public-page/public-page.component';
+import { FrontOfficeComponent } from './publicPage/front-office/front-office.component';
+import { PublicPageModule } from './public-page/public-page.module';
 
 @NgModule({
   declarations: [
@@ -50,13 +53,16 @@ import { authInterceptorProviders } from './services/authentification/authentifi
     DetailDemandeComponent,
     HomePageComponent,
     LoginComponent,
+    PublicPageComponent,
+    FrontOfficeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    PublicPageModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

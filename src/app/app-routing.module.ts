@@ -19,9 +19,15 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/authentification/login/login.component';
 import { AdministrationGuard } from './services/guard/administration.guard';
 import { EtudiantGuard } from './services/guard/etudiant.guard';
+import { PublicPageComponent } from './public-page/public-page.component';
+import { FrontOfficComponent } from './public-page/front-offic/front-offic.component';
 
 const routes: Routes = [
+
   {path:"",component:HomePageComponent, canActivate:[AdministrationGuard]},
+  // {path:"",component:PublicPageComponent,children:[
+  //   {path:"",component:FrontOfficComponent}
+  // ]},
 
 
   {path:"addUser",component:FormulaireUserComponent, canActivate:[AdministrationGuard]},

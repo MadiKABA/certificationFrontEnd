@@ -9,7 +9,7 @@
         <i class="bi bi-person-circle"></i>
     </div>
     <ul class="dropdown-menu">
-        <li class="text-center px-1">{{loginService.getUser().nom}}</li>
+        <li class="text-center px-1">{{loginService.getUser().prenoms+" "+loginService.getUser().nom}}</li>
         <li class="reglage-style"><i class="bi bi-gear-fill"></i></li>
         <li class="reglage-style" (click)="deconnexion()"><i class="bi bi-box-arrow-right style-icone"></i></li>
     </ul>
