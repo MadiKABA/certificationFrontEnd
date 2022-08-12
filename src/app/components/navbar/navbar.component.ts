@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Etudiant } from 'src/app/models/etudiant.model';
 import { LoginService } from 'src/app/services/authentification/login.service';
 
 @Component({
@@ -11,10 +12,14 @@ export class NavbarComponent implements OnInit {
   //Pour gerer le togle de navbar
   @Output() sideNavToggled=new EventEmitter<boolean>();
   menuStatus:boolean= false;
+  //isLoggedIn=false;
+  user:null|undefined;
 
   constructor(public loginService:LoginService,private routerRedirect:Router) { }
 
   ngOnInit(): void {
+    //this.isLoggedIn=this.loginService.isLoggedIn();
+    this.user=this.loginService.getUser();
     
   }
   navbarTogle(){
@@ -24,6 +29,8 @@ export class NavbarComponent implements OnInit {
 
   deconnexion(){
     this.loginService.logout();
+    this.user=null;
+    //this.isLoggedIn=false;
     this.routerRedirect.navigate(['/login']);
   }
 
