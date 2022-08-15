@@ -41,25 +41,19 @@
                     </span>
                   </div>
                 <div class="test">
-                    <label class="titre-inpute" for="prenom">Votre numero de telephone</label>
+                    <label class="titre-inpute" for="prenom">Votre adresse email</label>
                     <input type="text" formControlName="telephone" class="champ-input" id="prenom" required maxlength="200">
                     <span class="text-danger" 
                         *ngIf="saveDemande.controls['telephone'].touched
                         && saveDemande.controls['telephone'].errors
                         && saveDemande.controls['telephone'].errors['required']">
-                        Le numero de telephone est obligatoire
+                        L'adresse email est obligatoire
                     </span>
                     <span class="text-danger" 
                         *ngIf="saveDemande.controls['telephone'].touched
                         && saveDemande.controls['telephone'].errors
-                        && saveDemande.controls['telephone'].errors['minlength']">
-                        Le telephone doit avoir au minumum 9 chiffres
-                    </span>
-                    <span class="text-danger" 
-                        *ngIf="saveDemande.controls['telephone'].touched
-                        && saveDemande.controls['telephone'].errors
-                        && saveDemande.controls['telephone'].errors['pattern']">
-                        Le numero de telephone est invalide
+                        && saveDemande.controls['telephone'].errors['email']">
+                        L'adresse doit etre de type email
                     </span>
                 </div>
             </div>
