@@ -50,7 +50,7 @@ export class UpdateDemandeComponent implements OnInit {
     objet:['',[Validators.required,Validators.pattern(/[a-zA-Z]/)]],
     contenu:['',[Validators.required]],
     //dateDemande:(moment())
-    telephone:['',[Validators.required,Validators.pattern(/[0-9]/),Validators.minLength(9)]],
+    telephone:['',[Validators.required,Validators.pattern(/[a-zA-Z]/),Validators.minLength(9)]],
     statutDemande:[StatutDemande.EnCours],
     "etudiant": {
 

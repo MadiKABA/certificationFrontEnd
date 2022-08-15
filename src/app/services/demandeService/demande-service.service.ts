@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DemandeServiceService {
   host=environment.hostDemande
+  private smsURL="http://api.expressotelecom.sn/api-sms-itconceptafrica/sms/send";
 
   constructor(private http:HttpClient) { }
 
@@ -50,6 +51,14 @@ export class DemandeServiceService {
     return this.http.post<Demande>(this.host,demande).pipe(
       catchError(this.handleError)
     )
+  }
+
+  /*Send message service*/
+  public sendSMStoEtudiant(parms:any){
+    this.http.post(this.smsURL,parms).pipe(
+      catchError(this.handleError)
+    )
+    console.log(parms);
   }
 
 

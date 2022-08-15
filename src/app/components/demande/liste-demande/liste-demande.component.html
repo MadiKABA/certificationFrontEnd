@@ -20,7 +20,7 @@
     <div class="div-table-data">
         <div class="card-demandes">
             <div class="cadre-image-et-contenu" *ngFor="let demande of demandes" [ngClass]="demande.statutDemande==='Approuver' ? 'approuver-style':'rejeter-style'">
-                <img src="../../../../assets/imagejabbar.jpeg" class="img-fluid style-image">
+                <img src="../../../../assets/user-profile-svgrepo-com.svg" class="img-fluid style-image">
                 <div class="demande">
                     <p>Objet: {{demande.objet}}</p>
                     <p>Date d'envoi: {{demande.dateDemande  | date:'MM/d/yy' }}</p>

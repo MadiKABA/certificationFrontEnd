@@ -1,5 +1,4 @@
 import { EtatCompte } from "../components/enums/etatCompte.enumm";
-import { NiveauEtude } from "../components/enums/niveauEtude.enumm";
 import { Demande } from "./demande.model";
 import { Filiere } from "./filiere.model";
 import { Profile } from "./profile.model";

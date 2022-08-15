@@ -25,8 +25,8 @@ import { FrontOfficComponent } from './public-page/front-offic/front-offic.compo
 const routes: Routes = [
 
   {path:"",component:HomePageComponent, canActivate:[AdministrationGuard]},
-  // {path:"",component:PublicPageComponent,children:[
-  //   {path:"",component:FrontOfficComponent}
+  // {path:"accueil-office",component:PublicPageComponent,children:[
+  //   {path:"acc",component:FrontOfficComponent}
   // ]},
 
 

@@ -92,7 +92,7 @@ export class FormulaireUserComponent implements OnInit {
 
 
   redirction(){
-    this.routerRedirect.navigate(['/liste-etudiants']);
+    this.routerRedirect.navigate(['/listeUser']);
   }
 
 }

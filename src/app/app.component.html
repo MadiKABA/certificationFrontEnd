@@ -1,11 +1,20 @@
   <div class="container-fluid g-0">
   <!-- Bar de navigation -->
-  <app-navbar (sideNavToggled)="sideNavStatus=$event;"></app-navbar>
+  <app-navbar (sideNavToggled)="sideNavStatus=$event;">
+
+  </app-navbar>
   <!-- Fin de bar de navigation-->
   <!-- Sidebar -->
   <main>
-      <app-sidbar [sideNavStatus]="sideNavStatus"></app-sidbar>
+      <app-sidbar [sideNavStatus]="sideNavStatus">
+
+      </app-sidbar>
   </main>
   <!-- Fin de sidebar -->
   <!-- <app-footer></app-footer> -->
 </div>
+
+
+<!-- <div class="container">
+  <h1>Dashboard</h1>
+</div> -->

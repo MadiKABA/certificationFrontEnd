@@ -36,11 +36,11 @@ export class LoginComponent implements OnInit {
             console.log('user connected',user);
             this.loginService.setUser(user)
             if(this.loginService.getUserRole()=='Etudiant'){
-              console.log("vous etes Etudiants",user);
+              //console.log("vous etes Etudiants",user);
               /*Redirection Etudiant*/
               this.routerRedirect.navigate(['ajouter-demande']);
-            }else if(this.loginService.getUserRole()=='Admin'){
-              console.log('vous etes Administrateur');
+            }else if(this.loginService.getUserRole()=='Administrateur'){
+              //console.log('vous etes Administrateur');
               /*Redirection Administrateur*/
               this.routerRedirect.navigate(['']);
             }else{

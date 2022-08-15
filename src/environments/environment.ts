@@ -11,6 +11,7 @@ export const environment = {
   hostFiliere:"http://localhost:8080/filieres",
   hostDemande:"http://localhost:8080/demandes",
   generateLogin:"http://localhost:8080",
+  envoiEmail:"http://localhost:8080/sendEamil",
 };
 
 /*
