@@ -119,7 +119,7 @@
                 </div>
                 <div class="test">
                     <label class="titre-inpute" for="password">Mot de passe</label>
-                    <input type="text" formControlName="password" class="champ-input" id="password">
+                    <input type="password" formControlName="password" class="champ-input" id="password">
                   <div *ngIf="controleSaisie['password'].touched && controleSaisie['password'].invalid">
                     <p *ngIf="controleSaisie['password'].errors && controleSaisie['password'].errors['required']" class="text-danger">
                       * Le champs est obligatoire
