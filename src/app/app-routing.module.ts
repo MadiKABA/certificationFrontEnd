@@ -23,13 +23,13 @@ import { PublicPageComponent } from './public-page/public-page.component';
 import { FrontOfficComponent } from './public-page/front-offic/front-offic.component';
 
 const routes: Routes = [
+   {path:"accueil-office",component:PublicPageComponent,
+    children:[
+      {path:"acc",component:FrontOfficComponent}
+    ]
+  },
 
   {path:"",component:HomePageComponent, canActivate:[AdministrationGuard]},
-  // {path:"accueil-office",component:PublicPageComponent,children:[
-  //   {path:"acc",component:FrontOfficComponent}
-  // ]},
-
-
   {path:"addUser",component:FormulaireUserComponent, canActivate:[AdministrationGuard]},
   {path:"listeUser",component:ListeUserComponent, canActivate:[AdministrationGuard]},
   {path:"modifier-administrateur/:id",component:EditAdminComponent, canActivate:[AdministrationGuard]},

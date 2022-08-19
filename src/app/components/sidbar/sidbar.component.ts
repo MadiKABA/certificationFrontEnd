@@ -8,10 +8,12 @@ import { LoginService } from 'src/app/services/authentification/login.service';
 })
 export class SidbarComponent implements OnInit {
   @Input() sideNavStatus:boolean=false
+  role:any;
 
   constructor(public loginService:LoginService) { }
 
   ngOnInit(): void {
+    this.role=this.loginService.getUserRole();
   }
 
 }
