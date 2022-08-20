@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { Administrateur } from 'src/app/models/administrateur.model';
 import { Departement } from 'src/app/models/departement.model';
-import { EtatCompte } from 'src/app/components/enums/etatCompte.enumm';
+import { EtatCompte } from 'src/app/back-office/enums/etatCompte.enumm';
 import { Profile } from 'src/app/models/profile.model';
 import { AdminService } from 'src/app/services/administrateurService/admin.service';
 import { DepartementService } from 'src/app/services/departementService/departement.service';
@@ -28,7 +28,7 @@ export class FormulaireUserComponent implements OnInit {
               private departementService:DepartementService,
               private profileService:ProfileService,
               private fb:FormBuilder,
-              private routerRedirect:Router              
+              private routerRedirect:Router
             ) { }
 
   ngOnInit(): void {

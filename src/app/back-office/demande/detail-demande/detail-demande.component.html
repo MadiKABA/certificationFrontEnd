@@ -5,7 +5,7 @@
     <p>{{demande.contenu}}</p>
     <h5>Envoyer par : <span>{{demande.etudiant.prenoms+ " "+ demande.etudiant.nom}}</span></h5>
     <div class="button-traiment-demande my-2 mx-2">
-        <button class="retour mx-2" routerLink="/liste-demandes">Retour</button>
+        <button class="retour mx-2" routerLink="/administration/liste-demandes">Retour</button>
         <button class="valider mx-2" (click)="valider()">Valider</button>
         <button class="rejeter mx-2" (click)="rejeter()">Rejeter</button>
     </div>

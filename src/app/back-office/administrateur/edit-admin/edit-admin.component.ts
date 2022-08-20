@@ -22,8 +22,6 @@ export class EditAdminComponent implements OnInit {
   profiles!:Profile[]
   data!:Administrateur
   departementDTO!:any
-  tes:any
-
 
   constructor(private adminService:AdminService,
               private fb:FormBuilder,
@@ -120,6 +118,6 @@ export class EditAdminComponent implements OnInit {
   }
 
   redirction(){
-    this.routerRedirect.navigate(['/listeUser']);
+    this.routerRedirect.navigate(['/administration/listeUser']);
   }
 }

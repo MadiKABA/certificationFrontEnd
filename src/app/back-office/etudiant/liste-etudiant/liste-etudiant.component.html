@@ -3,8 +3,8 @@
 <div class="formulaire-container" *ngIf="etudiants">
     <div class="button-add-input-search my-4 mx-3">
         <button class="button-add-user">
-            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajouter-etudiant"></i>
-            <span class="titre-btn-add-user" routerLink="/ajouter-etudiant">Ajouter un etudiant</span>
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/administration/ajouter-etudiant"></i>
+            <span class="titre-btn-add-user" routerLink="/administration/ajouter-etudiant">Ajouter un etudiant</span>
         </button>
         <!-- <div>
           <form [formGroup]="rechercheEtudiant" (ngSubmit)="handleEtudiant()">
@@ -47,10 +47,10 @@
               <td>{{etudiant.telephone}}</td>
               <td [ngClass]="etudiant.etatCompte==='ACTIVE'? 'text-success':'text-danger'">{{etudiant.etatCompte}}</td>
               <td class="style-icone" (click)="activeDesactive(etudiant)"><i class="bi bi-arrow-down-up icone-edit"></i></td>
-              <td class="style-icone text-info" routerLink="/detail-etudiant/{{etudiant.id}}">
+              <td class="style-icone text-info" routerLink="/administration/detail-etudiant/{{etudiant.id}}">
                 <i class="bi bi-eye-fill"></i>
               </td>
-              <td class="style-icone" routerLink="/modifier-etudiant/{{etudiant.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
+              <td class="style-icone" routerLink="/administration/modifier-etudiant/{{etudiant.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
               <td class="style-icone" (click)="delete(etudiant)">
                 <i class="bi bi-trash3-fill icone-delete"></i>
               </td>

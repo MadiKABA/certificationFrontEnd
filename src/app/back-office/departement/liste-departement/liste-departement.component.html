@@ -3,8 +3,8 @@
 <div class="formulaire-container" *ngIf="departements">
     <div class="button-add-input-search my-4 mx-3">
         <button class="button-add-user">
-            <i class="bi bi-plus-circle icone-add-user" routerLink="/ajout-departementk"></i>
-            <span class="titre-btn-add-user" routerLink="/ajout-departement">Ajouter un departement</span>
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/administration/ajout-departementk"></i>
+            <span class="titre-btn-add-user" routerLink="/administration/ajout-departement">Ajouter un departement</span>
         </button>
         <!-- <div>
             <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
@@ -27,7 +27,7 @@
             <tr *ngFor="let departement of departements">
               <th scope="row">{{departement.id}}</th>
               <td>{{departement.nomDepartement}}</td>
-              <td class="style-icone" routerLink="/modifife-departement/{{departement.id}}">
+              <td class="style-icone" routerLink="/administration/modifife-departement/{{departement.id}}">
                 <i class="bi bi-pencil-square"></i>
              </td>
               <td class="style-icone" (click)="delete(departement.id)">

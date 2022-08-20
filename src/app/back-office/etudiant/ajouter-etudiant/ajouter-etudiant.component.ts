@@ -22,7 +22,7 @@ export class AjouterEtudiantComponent implements OnInit {
 
   constructor(
     private fb:FormBuilder,
-    private serviceFiliere:FiliereServiceService, 
+    private serviceFiliere:FiliereServiceService,
     private serviceEtudiant:EtudiantService,
     private routerRedirect:Router,
     private activatideRouter:ActivatedRoute
@@ -34,7 +34,7 @@ export class AjouterEtudiantComponent implements OnInit {
         this.filieres=data
       }),
       error:(error)=>{
-        console.log(error); 
+        console.log(error);
       }
     })
   }
@@ -74,11 +74,11 @@ export class AjouterEtudiantComponent implements OnInit {
         }
       })
       console.log('ajout de l\'etudiant',this.saveEtudiant.value);
-      
+
     }else{
       this.serviceEtudiant.editEtudiant(this.id,this.saveEtudiant.value).subscribe({
         next:(data)=>{
-          console.log('modification de l\'etudiant',this.saveEtudiant.value); 
+          console.log('modification de l\'etudiant',this.saveEtudiant.value);
           console.log(data);
           Swal.fire('success','Etudiant modifier','success');
           this.redirction();
@@ -91,7 +91,7 @@ export class AjouterEtudiantComponent implements OnInit {
   }
 
   redirction(){
-    this.routerRedirect.navigate(['/liste-etudiants']);
+    this.routerRedirect.navigate(['/administration/liste-etudiants']);
   }
 
   //la methode qui permet de modifier
@@ -108,7 +108,7 @@ export class AjouterEtudiantComponent implements OnInit {
           dateNaissance:(data['dateNaissance']),
           email:(data['email']),
           telephone:(data['telephone']),
-          matricule:(data['matricule']),  
+          matricule:(data['matricule']),
           profileDTO:({id:2}),
           etatCompte:(this.data.etatCompte==='ACTIVE'?EtatCompte.acive:EtatCompte.desactive),
           filiereDTO:({id:data.filiereDTO.id,'libelle':data.filiereDTO.libelle}),
@@ -116,7 +116,7 @@ export class AjouterEtudiantComponent implements OnInit {
           // photo:(data),
           username:(data['username']),
           password:(data['password']),
-        })  
+        })
       }
     })
 

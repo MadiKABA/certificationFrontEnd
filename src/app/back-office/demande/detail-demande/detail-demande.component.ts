@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   templateUrl: './detail-demande.component.html',
   styleUrls: ['./detail-demande.component.css']
 })
-export class DetailDemandeComponent implements OnInit {  
+export class DetailDemandeComponent implements OnInit {
   demande!:Demande;
   id!:number;
   emailParam!:EmailRequest;
@@ -56,9 +56,9 @@ export class DetailDemandeComponent implements OnInit {
           message:['Veuillez passez dans 24h pour recuperer votre demande'],
         })
         console.log('les parm de email a envoyer',this.addEmail.value);
-        
+
         this.sendMail.sendMailToStudent(this.addEmail.value).subscribe({
-          next:(res)=>{        
+          next:(res)=>{
           },
         })
 
@@ -69,7 +69,7 @@ export class DetailDemandeComponent implements OnInit {
       error:(error)=>{
         // console.log(error);
       }
-    }) 
+    })
   }
   rejeter(){
     const demande=this.demande.id;
@@ -83,11 +83,11 @@ export class DetailDemandeComponent implements OnInit {
           message:['Pour plus de information veuillez passez au departement au quel vous vous etes adressez'],
         })
         console.log('les parm de email a envoyer',this.addEmail.value);
-        
+
         this.sendMail.sendMailToStudent(this.addEmail.value).subscribe({
-          next:(res)=>{     
+          next:(res)=>{
             console.log(res);
-               
+
           },
         })
 
@@ -102,7 +102,7 @@ export class DetailDemandeComponent implements OnInit {
   }
 
   redirction(){
-    this.routerRedirect.navigate(['/liste-demandes']);
+    this.routerRedirect.navigate(['/administration/liste-demandes']);
   }
 
 }

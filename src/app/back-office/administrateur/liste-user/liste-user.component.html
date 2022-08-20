@@ -3,8 +3,8 @@
 <div class="formulaire-container" *ngIf="administrateurs">
     <div class="button-add-input-search my-4 mx-3">
         <button class="button-add-user">
-            <i class="bi bi-plus-circle icone-add-user" routerLink="/addUser"></i>
-            <span class="titre-btn-add-user" routerLink="/addUser">Ajouter un utilisateur</span>
+            <i class="bi bi-plus-circle icone-add-user" routerLink="/administration/addUser"></i>
+            <span class="titre-btn-add-user" routerLink="/administration/addUser">Ajouter un utilisateur</span>
         </button>
         <!-- <div>
           <form [formGroup]="rechercheAdmin" (ngSubmit)="handleAdmin()">
@@ -47,7 +47,7 @@
               <td>{{administrateur.profileDTO.libelle}}</td>
               <td [ngClass]="administrateur.etatCompte==='ACTIVE'? 'text-success':'text-danger'">{{administrateur.etatCompte}}</td>
               <td class="style-icone" (click)="activeDesactive(administrateur)"><i class="bi bi-arrow-down-up icone-edit"></i></td>
-              <td class="style-icone" routerLink="/modifier-administrateur/{{administrateur.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
+              <td class="style-icone" routerLink="/administration/modifier-administrateur/{{administrateur.id}}"><i class="bi bi-pencil-square icone-edit"></i></td>
               <td class="style-icone" (click)="delete(administrateur.id)">
                 <i class="bi bi-trash3-fill icone-delete"></i>
               </td>
