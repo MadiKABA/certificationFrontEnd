@@ -1,4 +1,4 @@
-<div *ngIf="loginService.isLoggedIn()" class="sidbar-style" [ngClass]="{'app-sideNav-open':sideNavStatus}">
+<div class="sidbar-style" [ngClass]="{'app-sideNav-open':sideNavStatus}">
   <ul class="nav-list mt-4"[ngClass]="{'nav-list-open':sideNavStatus}">
     <li class="nav-list-item" *ngIf="loginService.getUserRole()==='Administrateur'">
       <i routerLink="/administration/accueil" class="bi bi-speedometer style-icone mx-3"></i>

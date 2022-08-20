@@ -38,17 +38,17 @@ export class LoginComponent implements OnInit {
             if(this.loginService.getUserRole()=='Etudiant'){
               //console.log("vous etes Etudiants",user);
               /*Redirection Etudiant*/
-              this.routerRedirect.navigate(['ajouter-demande']);
+              this.routerRedirect.navigate(['/administration/ajouter-demande']);
             }else if(this.loginService.getUserRole()=='Administrateur'){
               //console.log('vous etes Administrateur');
               /*Redirection Administrateur*/
-              this.routerRedirect.navigate(['']);
+              this.routerRedirect.navigate(['/administration/accueil']);
             }else{
               this.loginService.logout();
             }
           },
           error:(error)=>{
-            console.log('error pour la recuperation du current user',error);       
+            console.log('error pour la recuperation du current user',error);
           }
         })
       },
