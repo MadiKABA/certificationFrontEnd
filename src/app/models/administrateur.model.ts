@@ -1,5 +1,5 @@
 import { Departement } from "./departement.model";
-import { EtatCompte } from "../components/enums/etatCompte.enumm";
+import { EtatCompte } from "../back-office/enums/etatCompte.enumm";
 import { Profile } from "./profile.model";
 
 export interface Administrateur{

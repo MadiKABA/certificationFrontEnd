@@ -1,52 +1,110 @@
-<div class="formulaire-container">
-    <span class="text-danger text-center">{{message}}</span>
-    <div class="form-login-div">
-        <div class="imge-connexion">
-            <img src="../../../../assets/loginRatifiki2.svg" class="img-fluid"/>
-        </div>
-        <div class="formulaire-connexion mt-5">
-            <h1 class="text-center text-syle mt-5">Se connecter</h1>
-            <form [formGroup]="loggedUser" (ngSubmit)="formSubmit()">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nom d'utilisateur</label>
-                    <input type="text" class="form-control champ-input" id="exampleInputEmail1"
-                    formControlName="username"
-                    />
-                    <span class="text-danger" 
-                        *ngIf="loggedUser.controls['username'].touched
-                        && loggedUser.controls['username'].errors
-                        && loggedUser.controls['username'].errors['required']">
-                        Le nom de l'utilisateur est obligatoire
-                    </span>
-                    <span class="text-danger" 
-                        *ngIf="loggedUser.controls['username'].touched
-                        && loggedUser.controls['username'].errors
-                        && loggedUser.controls['username'].errors['minlength']">
-                        La longueur minimale doit est 4
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control champ-input" id="exampleInputPassword1"
-                    formControlName="password"
-                    />
-                    <span class="text-danger" 
-                        *ngIf="loggedUser.controls['password'].touched
-                        && loggedUser.controls['password'].errors
-                        && loggedUser.controls['password'].errors['required']">
-                        Le password de l'utilisateur est obligatoire
-                    </span>
-                    <span class="text-danger" 
-                        *ngIf="loggedUser.controls['password'].touched
-                        && loggedUser.controls['password'].errors
-                        && loggedUser.controls['password'].errors['minlength']">
-                        La longueur minimale doit est 4
-                    </span>
-                </div>
-                <div class="send-btn">
-                    <button type="submit" [disabled]="loggedUser.invalid" class="save-btn">Se connecter</button>
-                </div>
-            </form>
-        </div>
+<div class="login-container">
+  <div class="container-login-and-image-login">
+    <div class="image-connexion">
+      <img src="../../../../assets/loginRatifiki2.svg"/>
     </div>
+    <div class="login-connexion">
+      <h1 class="text-center text-syle">Se connecter</h1>
+      <form [formGroup]="loggedUser" (ngSubmit)="formSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label">Nom d'utilisateur</label>
+          <input type="text" class="form-control champ-input" id="username"
+                 formControlName="username"
+          />
+          <span class="text-danger"
+                *ngIf="loggedUser.controls['username'].touched
+            && loggedUser.controls['username'].errors
+            && loggedUser.controls['username'].errors['required']">
+            Le nom de l'utilisateur est obligatoire
+        </span>
+          <span class="text-danger"
+                *ngIf="loggedUser.controls['username'].touched
+            && loggedUser.controls['username'].errors
+            && loggedUser.controls['username'].errors['minlength']">
+            La longueur minimale doit est 4
+        </span>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Mot de passe</label>
+          <input type="password" class="form-control champ-input" id="password"
+                 formControlName="password"
+          />
+          <span class="text-danger"
+                *ngIf="loggedUser.controls['password'].touched
+            && loggedUser.controls['password'].errors
+            && loggedUser.controls['password'].errors['required']">
+            Le password de l'utilisateur est obligatoire
+        </span>
+          <span class="text-danger"
+                *ngIf="loggedUser.controls['password'].touched
+            && loggedUser.controls['password'].errors
+            && loggedUser.controls['password'].errors['minlength']">
+            La longueur minimale doit est 4
+        </span>
+        </div>
+        <div class="send-btn">
+          <button type="submit" [disabled]="loggedUser.invalid" class="save-btn">Se connecter</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+<!--<div class="formulaire-container">-->
+<!--    <span class="text-danger text-center">{{message}}</span>-->
+<!--    <div class="form-login-div">-->
+<!--        <div class="imge-connexion">-->
+<!--            <img src="../../../../assets/loginRatifiki2.svg" class="img-fluid"/>-->
+<!--        </div>-->
+<!--        <div class="formulaire-connexion mt-5">-->
+<!--            <h1 class="text-center text-syle mt-5">Se connecter</h1>-->
+<!--            <form [formGroup]="loggedUser" (ngSubmit)="formSubmit()">-->
+<!--                <div class="mb-3">-->
+<!--                    <label for="exampleInputEmail1" class="form-label">Nom d'utilisateur</label>-->
+<!--                    <input type="text" class="form-control champ-input" id="exampleInputEmail1"-->
+<!--                    formControlName="username"-->
+<!--                    />-->
+<!--                    <span class="text-danger"-->
+<!--                        *ngIf="loggedUser.controls['username'].touched-->
+<!--                        && loggedUser.controls['username'].errors-->
+<!--                        && loggedUser.controls['username'].errors['required']">-->
+<!--                        Le nom de l'utilisateur est obligatoire-->
+<!--                    </span>-->
+<!--                    <span class="text-danger"-->
+<!--                        *ngIf="loggedUser.controls['username'].touched-->
+<!--                        && loggedUser.controls['username'].errors-->
+<!--                        && loggedUser.controls['username'].errors['minlength']">-->
+<!--                        La longueur minimale doit est 4-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--                <div class="mb-3">-->
+<!--                    <label for="exampleInputPassword1" class="form-label">Mot de passe</label>-->
+<!--                    <input type="password" class="form-control champ-input" id="exampleInputPassword1"-->
+<!--                    formControlName="password"-->
+<!--                    />-->
+<!--                    <span class="text-danger"-->
+<!--                        *ngIf="loggedUser.controls['password'].touched-->
+<!--                        && loggedUser.controls['password'].errors-->
+<!--                        && loggedUser.controls['password'].errors['required']">-->
+<!--                        Le password de l'utilisateur est obligatoire-->
+<!--                    </span>-->
+<!--                    <span class="text-danger"-->
+<!--                        *ngIf="loggedUser.controls['password'].touched-->
+<!--                        && loggedUser.controls['password'].errors-->
+<!--                        && loggedUser.controls['password'].errors['minlength']">-->
+<!--                        La longueur minimale doit est 4-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--                <div class="send-btn">-->
+<!--                    <button type="submit" [disabled]="loggedUser.invalid" class="save-btn">Se connecter</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

@@ -9,7 +9,6 @@ import { LoginService } from './services/authentification/login.service';
 export class AppComponent {
   isLoggedIn=false;
   title = 'certificationFrontEnd';
-  sideNavStatus:boolean=false;
 
   constructor(public loginService:LoginService) { }
 

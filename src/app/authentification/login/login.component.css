@@ -1,3 +1,36 @@
+.login-container{
+  width: 100%;
+  background: #CCCCCC;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-login-and-image-login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 80%;
+  height: 70%;
+  background: #ffffff;
+}
+.image-connexion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.login-connexion{
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  margin-left: 2rem;
+  justify-content: center;
+  width: 40%;
+}
+
 .formulaire-container{
     background: #F0F0F0;
     border-radius: 10px;
@@ -20,7 +53,7 @@
     border-radius: 10px;
     margin-left: 3rem;
     margin-right: 3rem;
-    
+
 }
 
 .div-champ-input{
@@ -29,10 +62,13 @@
     justify-content: space-between;
 }
 .champ-input{
-    height: 60px;
-    background: #FAFAFA;
-    border: 1px solid rgba(49, 80, 108, 0.22);
-    border-radius: 8px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  /*width: 90%;*/
+  background: #FAFAFA;
+  border: 1px solid rgba(49, 80, 108, 0.22);
+  border-radius: 8px;
 }
 
 .test{

@@ -1,4 +1,4 @@
-import { EtatCompte } from "../components/enums/etatCompte.enumm";
+import { EtatCompte } from "../back-office/enums/etatCompte.enumm";
 import { Demande } from "./demande.model";
 import { Filiere } from "./filiere.model";
 import { Profile } from "./profile.model";
