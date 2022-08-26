@@ -25,11 +25,12 @@ import {PublicComponent} from "./front-office/public.component";
 const routes: Routes = [
   {
     path:"",component:PublicComponent,
-    // children:[
-    //   {
-    //     // path: ""
-    //   }
-    // ]
+    children:[
+     
+      // {
+      //   path: "test",component:LoginComponent
+      // }
+    ]
   },
   {
     path:"administration",component:AdministrationComponent,
@@ -60,10 +61,7 @@ const routes: Routes = [
     ]
   },
 
-  {
-    path:"login",
-    component:LoginComponent
-  }
+  {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

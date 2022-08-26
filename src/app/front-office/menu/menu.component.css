@@ -1,0 +1,29 @@
+.menu-color{
+    background-color: #326699;
+    /* height: 100px; */
+}
+.navbar-light .navbar-brand{
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color:#fff
+}
+.btn-outline-success{
+    border:2px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+}
+.logo-accueil{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+.navbar-light .navbar-toggler{
+    border:#fff;
+    color: #fff;
+}
+button#navbar-toggler {
+background-color: red;
+}
+
+/*CSS/Simplon*/
