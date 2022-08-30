@@ -18,6 +18,6 @@ export class MenuComponent implements OnInit {
   deconnexion(){
     this.loginService.logout();
     // this.user=null
-    this.routerRedirect.navigate(['/login']);
+    this.routerRedirect.navigate(['/']);
   }
 }
