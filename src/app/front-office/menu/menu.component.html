@@ -1,19 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-light menu-color">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">UDB</a>
+      <img routerLink="/" class="style-btn" src="../../../assets/logo-footer.png"/>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active btn" aria-current="page">Accueil</a>
           </li>
         </ul>
-        <form class="d-flex">
+        <div class="d-flex">
+          <div class="menu-test">
+            <!-- <a class="nav-link active btn" aria-current="page">ACCUEIL</a>
+            <a class="nav-link active btn" aria-current="page">PRÉSENTATION</a> -->
+            <a class="btn" aria-current="page">Ecrire une demande</a>
+
+          </div>
           <button class="btn btn-outline-success" type="submit" routerLink="/login" *ngIf="!loginService.isLoggedIn()">Se connecter</button>
           <button class="btn btn-outline-success" type="submit" (click)="deconnexion()" *ngIf="loginService.isLoggedIn()">Se deconnecter</button>
-        </form>
+        </div>
       </div>
     </div>
 </nav>

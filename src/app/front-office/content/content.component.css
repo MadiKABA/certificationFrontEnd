@@ -44,206 +44,12 @@
     margin-top: 2%;
     margin-bottom: 1%;
 }
-.monstylebtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 215px;
-    height: 63px;
-    border-radius: 103px;
-    height: 50px;
-    width: 170px;
-    margin-top: 2%;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 27px;
-    color: #FFFFFF;
-}
-.titre-banner {
-    color: rgb(252, 248, 248);
-    font-style: normal;
-    font-weight: 900;
-    font-size: 54px;
-    position: relative;
-    
-}
-.sous-titre-banner{
-    color: #FFFFFF;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 30px;
-}
-.contactbtn{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-style: normal;
-    background: #CE0033;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 22px;
-    border-radius: 25px;
-}
+
 .banner{
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(58, 57, 57, 0.5)),url('../../../assets/mentor.jpeg') center center fixed
     no-repeat;
     background-size: cover;
     height: 850px;
-}
-.slide{
-    display: flex;
-    justify-content: center;
-    margin-top: 300px; 
-}
-.slide1{
-    height: 12px;
-    width: 12px;
-    border-radius: 100%;
-    background: #ffff;
-    border-color: transparent;
-    margin-left: 13px;
-    margin-right: 22px;
-}
-.slide3{
-    height: 12px;
-    width: 50px;
-    border-radius: 20px;
-    background: #ffff;
-    border-color: transparent;
-    margin-left: 13px;
-}
-.sectionImage{
-    position: static;
-    object-fit: cover;
-    width: 496px;
-    height: 557px;
-    left: 0px;
-    top: 5.5px;
-    border-radius: 30px;
-    flex: none;
-    flex-grow: 0;
-}
-.sout-section-simplon {
-    /* display: flex;
-    flex-wrap: wrap; */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 41px;
-    color: #000000; 
-}
-.section-de-simplon-senegla{
-    background: linear-gradient(253.7deg, 
-    rgba(206, 0, 51, 0.1386) -20.13%,
-     rgba(255, 249, 249, 0) 100%);
-
-}
-.titre-simplon-senegal{
-    font-style: normal;
-    font-weight: 800;
-    font-size: 36px;
-    line-height: 49px;
-    color: #CE0033;
-}
-
-/* CSS Section 3 */
-.titre-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 65px;
-    color: #CE0033;
-}
-.section3-image{
-    border-radius: 10px;
-}
-.titre-actualite{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    color: #1C1D28;
-}
-.sous-titre-page{
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
-    line-height: 140%;
-    color: #CE0033;
-}
-.contenu-actualite{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    color: #525560;
-}
-.evenmentcase{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 191px;
-    background: #CE0033;
-    border-radius: 10px;
-}
-.cercledate{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 90px;
-    width: 90px;
-    border-radius: 100%;
-    border-color: transparent;
-    background: #FFFFFF;
-    color: #ffff;
-}
-.plusactualite{
-    display: flex;
-    justify-content: end;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 34px;
-    letter-spacing: -0.02em;;
-}
-.plusactualite ,a{
-    text-decoration: none;
-    /* font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 34px;
-    letter-spacing: -0.02em; */
-    color: #CE0033;
-    /* padding-right: 20px; */
-}
-.plusactualite ,a:hover{
-    color: #CE0033;
-}
-.nex-evnement{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-.nex-evnement-btn{
-    height: 2px;
-    width: 50px;
-    border-radius: 2px;
-    background: #ffff;
-    border-color: transparent;
-    margin-left: 13px;
 }
 
 .banner-decouvertes{
@@ -252,468 +58,54 @@
     background-size: cover;
     height: 600px;
 }
-.nos-chiffre{
+/*Les css du certification*/
+.container-mot-president{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     /* align-items: center; */
-    background: #CE0033;
-    height: 170px;
-    position: relative;
-    margin-top: -70px;
-    padding-bottom: 5px;
-}
-.event1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 191px;
-    background: #CE0033;
-    border-radius: 10px;
-
-}
-
-/* Fin section decouvertes
-/* Section Footer */
-.banner-footer{
-    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(58, 57, 57, 0.5)),url('../../../assets/mentor.jpeg') center center
-    no-repeat;
-    background-size: cover;
-    height: 400px;
-}
-
-/* .case-footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .logo-footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    width: 20px;
-} */
-.icone-r-s{
-    display: flex;
-    flex-direction: row;
-    
-}
-.envoi{
-    display: flex;
-    flex-direction: row;
-    
-}
-.envoi-input{
-    display: flex;
-    justify-content: center;
-    border-radius: 10px 0 0 10px;
-    width: 160px;
-    height: 60px;
-}
-.btn-joindre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #CE0033;
-    border-color: transparent;
-    color: #ffff;
-    border-radius: 0 10px 10px 0px;
-    height: 60px;
-    width: 70px;
-    font-size: large;
-
-}
-.pied-bas{
-    background: #CE0033;
-    height: 70px;
     width: 100%;
-    /* margin-bottom: 1px; */
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 24px;
-    line-height: 33px;
-    color: #FFFFFF;  
-}
-.copyright{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.log-footer {
-    margin-left: 5rem; 
-}
-
-/* Fin section footer */
-
-/* Sections formateur */
-.souligne-titre{
-    height: 3.07px;
-    width: 136px;
-    background: black;
-    margin-bottom: 3em;
-    margin-top: -5px;
-}
-.case-photo-formateur{
-    position: relative;
-    box-shadow: 0px 3px 67px 0px #C3C3C340;
-    Width:498px;
-    Height:397px;
-    margin-left:8.47%;
-    margin-right: 56.94%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
-}
-.phot-description-formateur{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.contenu-formateur{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 229,85px;
-    height: 124,16px;
-    margin-top: 25%;
-    margin-bottom: 25%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-.btn-slide{
-    display: flex;
-    justify-content: center;
-}
-.btn-slide1{
-    height: 12px;
-    width: 12px;
-    border-radius: 100%;
-    background: #CE0033;
-    border-color: transparent;
-    margin-left: 13px;
-    margin-right: 22px;
-}
-.btn-slide2{
-    background: #CE0033;
-    border-color: transparent;
-    height: 12px;
-    width: 50px;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px; 
-}
-.line-arret{
-    margin-left: 80%;
-    margin-bottom: -40px;
-    height: 75px;
-    width: 6px;
-    background: #CE0033;
-}
-.photo-formateur{
-    /* height: 100x; */
-    width: 226px;
-    height: 259px;
-    /* background: #CE0033; */
-    margin-left: -54px;
-    margin-top: -20px;
-    border-radius: 15px;  
-    box-shadow: 10px 8px 34px 0px #B9B5B540;
-}
-.voir-plus-div{
-    margin-left: 75%;
-    Width :112px;
-    Height :34px;
-    margin-top: -70px;
-    
-}
-.voir-plus{ 
-    border-radius: 20px;
-
-  
-}
-.nom{
-    position: absolute;
-    margin-top: 39.48%;
-    margin-left: 10%;
-}
-.titre{
-    position:absolute;
-    
-margin-left: 10.03%;
-font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 160%;
-    color: #525560;
-
-}
-.souligne-nom {
-    /* position:absolute ; */
-    height: 3px;
-    width: 136px;
-    background: black;
-    margin-top: -10px;
-}
-.colr2{
-    position: relative;
-    box-shadow: 0px 3px 67px 0px #C3C3C340;
-    width: 82%;
-    margin-left: 8.87%;
-    height: 498px;
-    margin-top: 5px;
-    margin-bottom: 5px; 
-}
-/* Fin section formateur */
-
-
-
-/* Partie petite histoire de la communauter */
-.case-ptite-story{
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 3px 67px 0px #C3C3C340;
-    Height:415px;
-    width: 408px;
-    border-radius: 15px;
-    
-    margin-right: 1rem;
-    margin-left: 1rem;
-
-    z-index: 56;
-    background: rgba(255, 255, 255, 1);
-}
-
-.contenu-story{
-    /* margin-top: 5em;  */
-    margin-left: 6.3%;
-    Width:335.69px;
-    Height: 206.7px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
-    
-}
-
-.image-ptite-story{
-    display: flex;
-    margin-left: 8.25%;
-    Width:86px;
-    Height: 86px;
-    border-radius: 100%;
-}
-.nom-formateur{
-    display: flex;
-    flex-direction: column;
-}
-.image-and-name{
-    margin-top: -3rem;
-    margin-left: 2rem ;
-    display: flex;
-    flex-direction: row;
-}
-.nom-fonction{
-    margin-left: 8%;
-    margin-top: 1em;
-}
-.cercle-bas{
-    position: absolute;
-    Width :94px;
-    Height: 96px;
-    border-radius: 100%;
-    background: rgba(206, 0, 51, 0.09);
-    margin-left: 68%;
-    margin-top: -2.5%;
-
-}
-
-.cercle-haut{
-    position: absolute;
-    Width :94px;
-    Height: 96px;
-    border-radius: 100%;
-    background: rgba(206, 0, 51, 0.09);
-    margin-left: -2%;
-    /* margin-top: -2.5%; */
-}
-.icone-message{
-    height: 42px;
-    width: 60px;
-    margin-left: 5%;
-    /* background: rgba(206, 0, 51, 0.07); */
-    margin-top: 2rem;
+    height: auto;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
-/* Fin petite histoire de la communauter */
-
-/* Section contactez nous */
-.champ-nom{
-    margin-top: 20px;      
-    margin-right: 5%;
-    Width:369px;
-    Height: 74px;
+.picture-president{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(58, 57, 57, 0.5)),url('../../../assets/presi.png') center center
+    no-repeat;
+    background-size: cover;
+    display: flex;
+    width: 50%;
+    height: 500px;
+    background-color: #326699;
     border-radius: 10px;
-    margin-bottom: 3%;
-    box-shadow: 4px 4px 26px 0px #5E6D6C57;
-
 }
-.message-text{
-    margin-top: 20px; 
-    Width:700px;
-    Height:200px;
-    border-radius: 10px; 
-    box-shadow: 4px 4px 26px 0px #5E6D6C57;
-   
-}
-
-.formulaire{
-    margin-top: 3%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    width: 70%;
-    height: 600px;
-    /* background: #CE0033; */
-    /* margin-bottom: 5px; */
-    
-}
-.icone-and-contenu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.contact{
-    display: flex; 
-    justify-content: center;
-    flex-direction: column;
-    width: 30%;
-    height: 600px;
-    margin-bottom: 5px;
-    margin-left: -2rem;
-}
-.contenu-contact{
-    margin-left: 5px;
+.mot-president{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.div-champ{
-    display: flex;
-    flex-direction: row;
-}
-
-/* Fin section contactez nous */
-
-
-/* section apprenant */
-
-.apprenant{
-    display: flex;
-    flex-direction: column;
-}
-.contenu-apprenant{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    Width:681px;
-    Height:426px;
-    background: #F9F8F8;
-}
-.text-apprenat{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    Width :538.08px;
-    Height :153.24px;
-    /* font-size: larger; */
-    
-}
-.apprenant-row{
-    display: flex;
-    flex-direction: row;
-}
-
-.apprenant-row1{
-    display: flex;
-    flex-direction: row;
-}
-
-.aprena{
-    border-radius: 0 10px 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #CE0033;
-    color: #FFFFFF;
-    width:177px ;
-    height:41px ;
-    margin-left: -3rem;
-    margin-bottom: -4rem;
-    position: relative;
-    padding-top: 1rem;
-    z-index: 4;
-    font-size: large;
-    
-}
-.descrition-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 40%;
     margin-left: 1rem;
-    margin-right: 1rem;
-    font-style: bold;
-    font-size: larger;
 }
-
-.pedagogie-col{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 3rem;
+p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 41px;
 }
-.aprena-peda{
-    border-radius: 0 10px 10px 0;
+h3{
+    font-size: 1.7rem;
+    color: #326699;
+    text-align: center;
+}
+.container-accroche-president{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #CE0033;
-    color: #FFFFFF;
-    width:180px;
-    height:41px ;
-    font-style: black;
-    padding-top: 1rem;
-    /* margin-left: rem; */
-    margin-bottom: -4rem;
-    position: relative;
-    z-index: 4;
-    font-size: large;
+    color: #326699;
+    margin: 1rem;
+    
 }
-/* Fin section apprenant */
+/*Fin css du certification*/
 
- /* Une partie de actualiter le div date */
- .date-div{
-     position: absolute;
-     width: 40px;
-     height: 70px;
-     background: #CE0033;
-     color: #FFFFFF;
-     border-radius: 0 0 15px 15px;
-     margin-left: 16rem;
-     margin-top: -2rem;
-     /* font-style: bold; */
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-
- }
- .posi{
-     position: relative;
- }
  /* Fin div actualite div date */
 
 
@@ -959,6 +351,18 @@ font-style: normal;
     }
     .img-footer {
         margin-left: 1rem;
+    }
+
+    /*Certification media query*/
+    p{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    h3{
+        /* font-size: 1.7rem; */
+        color: #326699;
+        text-align: center;
     }
 
 }

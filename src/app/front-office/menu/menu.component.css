@@ -1,6 +1,8 @@
 .menu-color{
     background-color: #326699;
     /* height: 100px; */
+    position: fixed!important;
+    width: 100%!important;
 }
 .navbar-light .navbar-brand{
     color: #fff;
@@ -24,6 +26,22 @@
 }
 button#navbar-toggler {
 background-color: red;
+}
+.style-btn{
+    cursor: pointer;
+}
+.menu-test{
+    display: flex;
+    flex-direction: row;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.position-fixed {
+    position: fixed!important;
 }
 
 /*CSS/Simplon*/
