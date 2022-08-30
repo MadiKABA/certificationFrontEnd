@@ -21,15 +21,20 @@ import { AdministrationGuard } from './services/guard/administration.guard';
 import { EtudiantGuard } from './services/guard/etudiant.guard';
 import {AdministrationComponent} from "./back-office/administration.component";
 import {PublicComponent} from "./front-office/public.component";
+import { DemandeEtudiantComponent } from './front-office/demande-etudiant/demande-etudiant.component';
+import { ContentComponent } from './front-office/content/content.component';
 
 const routes: Routes = [
   {
     path:"",component:PublicComponent,
     children:[
+      {
+        path:"home",component:ContentComponent
+      },
      
-      // {
-      //   path: "test",component:LoginComponent
-      // }
+      {
+        path: "ecrire-demnade",component:DemandeEtudiantComponent,canActivate:[EtudiantGuard]
+      }
     ]
   },
   {

@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   deconnexion(){
     this.loginService.logout();
     // this.user=null
-    this.routerRedirect.navigate(['/']);
+    this.routerRedirect.navigate(['/home']);
   }
 
 }

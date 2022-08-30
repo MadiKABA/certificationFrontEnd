@@ -29,6 +29,7 @@ background-color: red;
 }
 .style-btn{
     cursor: pointer;
+    margin-left: 1.5rem;
 }
 .menu-test{
     display: flex;

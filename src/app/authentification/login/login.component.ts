@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
             if(this.loginService.getUserRole()=='Etudiant'){
               //console.log("vous etes Etudiants",user);
               /*Redirection Etudiant*/
-              this.routerRedirect.navigate(['/']);
+              this.routerRedirect.navigate(['/home']);
             }else if(this.loginService.getUserRole()=='Administrateur'){
               //console.log('vous etes Administrateur');
               /*Redirection Administrateur*/

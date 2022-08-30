@@ -55,3 +55,54 @@
     /* text-align: center; */
     color: #326799;
 }
+
+/*style navbr front-office*/
+.menu-color{
+    background-color: #326699;
+    /* height: 100px; */
+    position: fixed!important;
+    width: 100%!important;
+}
+.navbar-light .navbar-brand{
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color:#fff
+}
+.btn-outline-success{
+    border:2px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+}
+.logo-accueil{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+.navbar-light .navbar-toggler{
+    border:#fff;
+    color: #fff;
+}
+button#navbar-toggler {
+background-color: red;
+}
+.style-btn{
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+.menu-test{
+    display: flex;
+    flex-direction: row;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.position-fixed {
+    position: fixed!important;
+}
+
+/*CSS/Simplon*/
+

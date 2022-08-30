@@ -7,6 +7,7 @@ import { ContentComponent } from './content/content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DemandeEtudiantComponent } from './demande-etudiant/demande-etudiant.component';
 
 
 
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     FooterComponent,
     ContentComponent,
+    DemandeEtudiantComponent,
   ],
   imports: [
     CommonModule,

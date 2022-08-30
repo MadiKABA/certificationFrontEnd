@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light menu-color">
     <div class="container-fluid">
-      <img routerLink="/" class="style-btn" src="../../../assets/logo-footer.png"/>
+      <img routerLink="/home" class="style-btn" src="../../../assets/logo-footer.png"/>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,11 +9,11 @@
           <li class="nav-item">
           </li>
         </ul>
-        <div class="d-flex">
+        <div class="d-flex mx-4">
           <div class="menu-test">
             <!-- <a class="nav-link active btn" aria-current="page">ACCUEIL</a>
             <a class="nav-link active btn" aria-current="page">PRÉSENTATION</a> -->
-            <a class="btn" aria-current="page">Ecrire une demande</a>
+            <a class="btn" routerLink="/ecrire-demnade" aria-current="page">Ecrire une demande</a>
 
           </div>
           <button class="btn btn-outline-success" type="submit" routerLink="/login" *ngIf="!loginService.isLoggedIn()">Se connecter</button>

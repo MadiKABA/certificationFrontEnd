@@ -1,0 +1,147 @@
+.menu-color{
+    background-color: #326699;
+    /* height: 100px; */
+    position: fixed!important;
+    width: 100%!important;
+}
+.navbar-light .navbar-brand{
+    color: #fff;
+}
+.navbar-light .navbar-nav .nav-link.active{
+    color:#fff
+}
+.btn-outline-success{
+    border:2px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+}
+.logo-accueil{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+.navbar-light .navbar-toggler{
+    border:#fff;
+    color: #fff;
+}
+button#navbar-toggler {
+background-color: red;
+}
+.style-btn{
+    cursor: pointer;
+    margin-left: 1.5rem;
+}
+.menu-test{
+    display: flex;
+    flex-direction: row;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.position-fixed {
+    position: fixed!important;
+}
+
+/*CSS/Simplon*/
+
+/*css formaulaire demande*/
+.formulaire-container{
+    background: #F0F0F0;
+    border-radius: 10px;
+    /* display: flex; */
+    height: 880px;
+    padding-top: 5rem;
+}
+
+.text-syle{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #326799;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.fom-container{
+    margin-bottom: 2rem;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+}
+
+.div-champ-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.champ-input{
+    height: 60px;
+    background: #FAFAFA;
+    border: 1px solid rgba(49, 80, 108, 0.22);
+    border-radius: 8px;
+}
+
+.test{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1%;
+}
+.input-demande{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1%;
+}
+.champ-input-titre{
+    width: 100%;
+}
+.titre-input{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #326799;
+}
+.text-demande{
+    height: 300px;
+}
+/* Media query mobile */
+@media only screen and (min-width: 320px) and (max-width:767px) {
+    .div-champ-input{
+        flex-direction: column;
+    }
+    .test{
+        width: 100%;
+    }
+    .fom-container{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .formulaire-container{
+        height: auto;
+        padding-bottom: 0.5rem;
+    }
+    .text-syle{
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .save-btn{
+        width: 90%;
+    }
+
+}
+/* Media quer tablette */
+@media only screen and (min-width:768px) and (max-width:1024px){
+
+}
